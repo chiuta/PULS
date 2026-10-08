@@ -794,7 +794,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   </div>
 
   <h3><span class="n">05</span>Copii și sugari — diferențe rapide</h3>
-  <p style="font-size:13.5px;color:var(--ink-dim);">Principiile de mai sus sunt pentru adulți. La copii și sugari, adâncimea și tehnica mâinilor diferă — detalii complete în <b>§28 Prim ajutor pediatric</b>. Pe scurt: la sugari (sub 1 an), <b>nu</b> se mai folosește tehnica cu două degete — se folosește <b>podul unei singure palme</b> sau tehnica <b>„două police, mâini încolăcite"</b> în jurul toracelui.</p>
+  <p style="font-size:13.5px;color:var(--ink-dim);">Principiile de mai sus sunt pentru adulți. La copii și sugari, adâncimea și tehnica mâinilor diferă — detalii complete în <b>§28 Prim ajutor pediatric</b>. Pe scurt: la sugari (sub 1 an), tehnica preferată (mai ales cu doi salvatori) este <b>„două police, mâini încolăcite"</b> în jurul toracelui, sau <b>podul unei singure palme</b>; tehnica cu două degete rămâne o variantă acceptată pentru un singur salvator.</p>
 
   <h3><span class="n">06</span>Defibrilatorul automat (DEA/AED)</h3>
   <ol class="steps">
@@ -1584,7 +1584,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
       <tr><td class="k">Sugar (sub 1 an)</td><td>Două police, mâini încolăcite în jurul toracelui — sau podul unei singure palme</td><td>~4 cm (1/3 din grosimea toracelui)</td><td>100–120/min</td></tr>
     </table>
   </div>
-  <div class="note warn">Tehnica veche „cu două degete" pentru sugari <b>nu mai e recomandată</b> — folosește podul palmei sau tehnica cu police, sunt mai eficiente.</div>
+  <div class="note warn">Pentru sugari, tehnica cu <b>două police, mâini încolăcite</b> (sau podul unei palme) e preferată; „două degete" rămâne o variantă acceptată pentru un singur salvator.</div>
   <p style="font-size:13px;color:var(--ink-faint);">Raportul rămâne 30 compresii : 2 respirații, la fel ca la adulți, pentru un singur salvator. Dacă stopul e cauzat probabil de o problemă respiratorie (foarte frecvent la copii — sufocare, înec, criză de astm), <b>5 respirații inițiale</b> înainte de a începe compresiile ajută.</p>
 
   <h3><span class="n">02</span>Febră</h3>
@@ -1651,7 +1651,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 
   <div class="searchbox">
     <span class="ico">⌕</span>
-    <input type="text" id="glosarSearch" placeholder="Caută un termen… (ex: anafilaxie, DEA, garou)">
+    <input type="text" id="glosarSearch" aria-label="Caută în glosar" placeholder="Caută un termen… (ex: anafilaxie, DEA, garou)">
     <span class="count-pill" id="glosarCount"></span>
   </div>
 
@@ -4088,6 +4088,7 @@ var qrcode = function() {
 function $(sel,root){ return (root||document).querySelector(sel); }
 function $$(sel,root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
 function pad2(n){ return String(n).padStart(2,'0'); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 function fold(s){
   return (s||'').toLowerCase()
     .replace(/[ăâ]/g,'a')
@@ -4352,7 +4353,10 @@ function cprSetMode(mode){
   cprBeatCount=0;
   if(cprBreatheTO){ clearTimeout(cprBreatheTO); cprBreatheTO=null; }
   cprPhase='compress';
-  if(cprRunning){ cprSetPhaseLabel('COMPRIMĂ','compress'); }
+  if(cprRunning){
+    cprSetPhaseLabel('COMPRIMĂ','compress');
+    if(!cprIntervalId){ cprIntervalId = setInterval(cprDoBeat, cprMsPerBeat()); } // reia metronomul dacă s-a schimbat modul în pauza de 2 respirații
+  }
   const cyc = $('#cprCycleLabel');
   if(cyc) cyc.textContent = mode==='302' ? 'Compresia 0 / 30' : (cprRunning?'RCP continuă — fără pauză':'Apasă Start pentru a începe');
 }
@@ -4575,7 +4579,7 @@ const QUIZ = [
 {cat:"proceduri",q:"Aplicația „Apel 112” e utilă mai ales pentru:",opts:["Comenzi de mâncare","Persoane cu dizabilități de auz/vorbire — apel video cu interpret","Rezervări la medic","Plata amenzilor"],correct:1,explain:"Oferă apel video cu interpret mimico-gestual și alte canale accesibile."},
 {cat:"proceduri",q:"Cât timp privești pieptul unei persoane ca să verifici respirația?",opts:["Maximum 10 secunde","5 minute","O oră","Nu se verifică vizual"],correct:0,explain:"10 secunde sunt suficiente pentru a observa mișcări regulate ale pieptului."},
 {cat:"proceduri",q:"„Gâfâielile” rare și zgomotoase (gasping) la o persoană inconștientă înseamnă:",opts:["Respirație normală, nu intervii","Nu e respirație normală — începi RCP","Că doarme profund","Că e doar speriată"],correct:1,explain:"Gâfâielile agonice sunt frecvente în stopul cardiac și nu înlocuiesc respirația normală."},
-{cat:"speciale",q:"La RCP pe un sugar sub 1 an, ce tehnică nu se mai recomandă?",opts:["Podul unei palme","Tehnica cu două degete","Două police, mâini încolăcite","Toate variantele de mai sus sunt corecte"],correct:1,explain:"Tehnica veche cu două degete a fost înlocuită — podul palmei sau tehnica cu police sunt mai eficiente."},
+{cat:"speciale",q:"La RCP pe un sugar sub 1 an, cu doi salvatori, ce tehnică de compresii e preferată?",opts:["Pumn închis","Compresii cu un singur deget","Două police, mâini încolăcite în jurul toracelui","Palmele suprapuse, ca la adulți"],correct:2,explain:"Cu doi salvatori se preferă tehnica cu două police și mâinile încolăcite; un singur salvator poate folosi și două degete sau podul unei palme."},
 {cat:"speciale",q:"La un copil cu febră, când suni 112 de urgență?",opts:["La orice grad de febră","Dacă apar ceafă înțepenită, erupție, dificultăți de respirație","Doar dacă refuză o masă","Niciodată, febra nu e urgentă"],correct:1,explain:"Semnele de alarmă, nu febra în sine, indică o urgență reală."},
 {cat:"speciale",q:"Care e un semn de deshidratare la un sugar?",opts:["Multe scutece ude","Fontanela (moalele capului) înfundată","Energie în exces","Somn normal, obișnuit"],correct:1,explain:"Fontanela înfundată, alături de puține scutece ude, indică deshidratare."},
 {cat:"speciale",q:"Un copil a înghițit o baterie tip „nasture”. Ce faci?",opts:["Aștepți s-o elimine natural","Mergi urgent la medic — sunt corozive","Îi dai lapte și aștepți acasă","Ignori dacă nu tușește"],correct:1,explain:"Bateriile buton pot provoca leziuni corozive severe în ore — urgență reală."},
@@ -4844,9 +4848,9 @@ function buildHandoffHTML(){
   const c = emergencyCard;
   if(c.nume||c.grupa||c.alergii||c.medicatie||c.afectiuni){
     html += '<div class="hrow"><span class="k">Card medical</span><span class="v" style="font-size:14px;font-weight:400;line-height:1.5;">'
-      + (c.nume?c.nume+'<br>':'') + (c.grupa?'Grupă '+c.grupa+'<br>':'')
-      + (c.alergii?'<b style="color:var(--pulse);">Alergii: '+c.alergii+'</b><br>':'')
-      + (c.medicatie?'Medicație: '+c.medicatie+'<br>':'') + (c.afectiuni?'Afecțiuni: '+c.afectiuni:'') + '</span></div>';
+      + (c.nume?esc(c.nume)+'<br>':'') + (c.grupa?'Grupă '+esc(c.grupa)+'<br>':'')
+      + (c.alergii?'<b style="color:var(--pulse);">Alergii: '+esc(c.alergii)+'</b><br>':'')
+      + (c.medicatie?'Medicație: '+esc(c.medicatie)+'<br>':'') + (c.afectiuni?'Afecțiuni: '+esc(c.afectiuni):'') + '</span></div>';
   }
   return html;
 }
@@ -5069,7 +5073,7 @@ function renderCardPreview(){
     ['Contact urgență', (c.contactNume||c.contactTel) ? (c.contactNume+' '+c.contactTel).trim() : '—'],
     ['Note', c.note||'—']
   ];
-  $('#cardPreview').innerHTML = rows.map(r=>'<div class="cp-row"><span class="k">'+r[0]+'</span><span class="v">'+r[1]+'</span></div>').join('');
+  $('#cardPreview').innerHTML = rows.map(r=>'<div class="cp-row"><span class="k">'+r[0]+'</span><span class="v">'+esc(r[1])+'</span></div>').join('');
 }
 function cardToText(){
   const c = emergencyCard;
