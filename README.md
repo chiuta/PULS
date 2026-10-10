@@ -44,6 +44,10 @@ Descarcă `index.html` și deschide-l în browser; ghidul funcționează fără 
 
 Licența nu este încă declarată explicit în acest repository; vezi nota din aplicație. Aplicația menționează doar că biblioteca de coduri QR inclusă (qrcode-generator, Kazuhiko Arase) este sub licență MIT.
 
+## Audit
+
+Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele teme); verificat în cod: fără `fetch`, fără `localStorage`. Corectate: meniul/layoutul pentru ecrane înguste (regulile CSS pentru ☰ lipseau), contrastul culorilor. Conținutul medical a fost doar parcurs, nu validat clinic — pentru verificare cere avizul unui specialist/instructor autorizat.
+
 ## Autor
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
