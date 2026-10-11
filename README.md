@@ -8,7 +8,7 @@ Ghid complet de prim ajutor, într-un singur fișier HTML.
 
 ## Ce este
 
-PULS (v2.1 în aplicație, „verificat 2026-08-06”) este un ghid de prim ajutor în limba română, cu 32 de secțiuni și un „Mod Urgență” care te conduce pas cu pas, cu voce, prin manevre. Conținutul este declarat educațional, redat de autor pe baza ghidurilor ERC, AHA/ILCOR și OMS, **fără validare clinică de către un instructor sau medic autorizat**, și **nu înlocuiește** un curs autorizat, avizul medical sau intervenția profesională; în urgență reală se sună la 112.
+PULS (v2.1.1 în aplicație, actualizat 2026-10-11; conținutul medical a fost verificat ultima dată la 2026-08-06 și nu a fost reverificat clinic) este un ghid de prim ajutor în limba română, cu 32 de secțiuni și un „Mod Urgență” care te conduce pas cu pas, cu voce, prin manevre. Conținutul este declarat educațional, redat de autor pe baza ghidurilor ERC, AHA/ILCOR și OMS, **fără validare clinică de către un instructor sau medic autorizat**, și **nu înlocuiește** un curs autorizat, avizul medical sau intervenția profesională; în urgență reală se sună la 112.
 
 ## Funcții
 
@@ -47,6 +47,14 @@ Licența nu este încă declarată explicit în acest repository; vezi nota din 
 ## Audit
 
 Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele teme); verificat în cod: fără `fetch`, fără `localStorage`. Corectate: meniul/layoutul pentru ecrane înguste (regulile CSS pentru ☰ lipseau), contrastul culorilor. Conținutul medical a fost doar parcurs, nu validat clinic — pentru verificare cere avizul unui specialist/instructor autorizat.
+
+## Istoric / Changelog
+
+Ultima actualizare: 11 octombrie 2026 — v2.1.1 (patch; conținutul medical neschimbat).
+- Margini laterale de 16 px pe ecrane ≤ 900 px (înainte 44 px, care îngusta textul pe 360 px).
+- Accesibilitate: bara de sus este `<header>`, titlurile din subsol sunt h2 (ordine corectă); axe-core = 0 violări la 1280 și 360 px.
+- Adăugată politică CSP (`<meta>`): scripturi doar pe bază de hash, `connect-src 'none'`.
+- Licența rămâne nedeclarată (decizie a autorului).
 
 ## Autor
 

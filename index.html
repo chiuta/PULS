@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-HuY3yiwPkmlvmOw3fzhYyASAoe9J/u7E6WArzz0N4DE=' 'sha256-5U6D1hs52GTqTuIKFCmKiZ2sKZstNK/GdfXwajOEJcs='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; font-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; worker-src 'none'; manifest-src 'none'">
 <title>PULS — Ghid complet de prim ajutor</title>
 <meta name="description" content="Ghid complet, off-line, de prim ajutor: resuscitare (RCP), sufocare, sângerări, arsuri, șoc anafilactic, AVC și multe altele — un singur fișier, fără cont, fără internet.">
 <style>
@@ -194,6 +195,7 @@ button{font-family:inherit;}
 main{min-width:0;}
 .section{display:none;padding:40px 44px 90px;max-width:920px;}
 .section.active{display:block;animation:fadein .35s ease;}
+@media (max-width:900px){.section{padding:28px 16px 90px;}}
 @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 .eyebrow{
   font-family:var(--font-mono);color:var(--amber);font-size:12px;letter-spacing:.14em;
@@ -361,8 +363,9 @@ label{display:block;font-size:11px;color:var(--ink-faint);letter-spacing:.05em;t
 
 /* ---------- footer ---------- */
 footer{border-top:1px solid var(--line);padding:34px 44px 50px;max-width:920px;}
+@media (max-width:900px){footer{padding:28px 16px 50px;}}
 footer .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px;}
-footer h5{font-family:var(--font-mono);color:var(--amber);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;}
+footer h2{font-family:var(--font-mono);color:var(--amber);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;}
 footer p,footer li{font-size:12.5px;color:var(--ink-dim);}
 footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
 footer a{color:var(--ink-dim);text-decoration:none;}
@@ -503,12 +506,12 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 <body>
 <a href="#main" class="skip-link">Sări la conținut</a>
 
-<div class="topbar">
+<header class="topbar">
   <button id="drawerBtn" aria-label="Deschide meniul" aria-expanded="false">☰</button>
   <div class="brand">PULS</div>
   <button class="sosbtn" id="sosBtnMobile" type="button">🆘 URGENȚĂ</button>
   <button id="themeBtnMobile" aria-label="Comută tema">◐</button>
-</div>
+</header>
 <div class="scrim" id="scrim"></div>
 
 <div class="shell">
@@ -516,7 +519,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   <div class="brandblock">
     <div class="brand"><span class="dot"></span> PULS</div>
     <div class="tagline">Ghid complet de prim ajutor · off-line</div>
-    <div class="tagline">v2.1 · verificat 2026-08-06</div>
+    <div class="tagline">v2.1.1 · actualizat 2026-10-11 · conținut verificat 2026-08-06</div>
     <div class="clock"><span>local <b id="localClock">--:--</b></span><span id="dateClock"></span></div>
   </div>
 
@@ -1721,12 +1724,12 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 <footer>
   <div class="fgrid">
     <div>
-      <h5>Puls</h5>
+      <h2>Puls</h2>
       <p>Un ghid de prim ajutor, într-un singur fișier HTML — fără server, fără cont, fără telemetrie. Se deschide la fel de bine offline ca online, azi sau peste zece ani.</p>
       <p style="margin-top:10px;">Construit în spiritul <b>trade-free</b>: cunoașterea care îți poate salva viața sau viața cuiva de lângă tine nu ar trebui să aibă nevoie de cont, abonament sau semnal.</p>
     </div>
     <div>
-      <h5>Autor</h5>
+      <h2>Autor</h2>
       <ul>
         <li><a href="https://chiuta.github.io" target="_blank" rel="noopener">chiuta.github.io</a></li>
         <li><a href="https://www.patreon.com/c/alexio_tf" target="_blank" rel="noopener">Patreon — Printre Inteligențe</a></li>
@@ -1735,7 +1738,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
       </ul>
     </div>
     <div>
-      <h5>Surse &amp; resurse</h5>
+      <h2>Surse &amp; resurse</h2>
       <ul>
         <li><a href="https://www.crucearosie.ro" target="_blank" rel="noopener">crucearosie.ro</a> — cursuri autorizate de prim ajutor</li>
         <li><a href="https://cpr.heart.org" target="_blank" rel="noopener">cpr.heart.org</a> — ghiduri AHA/ILCOR RCP</li>
@@ -1747,7 +1750,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
     </div>
   </div>
   <div style="margin-top:18px;font-size:11.5px;color:var(--ink-faint);line-height:1.7;">
-    <b style="color:var(--ink-dim);">Istoric</b> — <span style="font-family:var(--font-mono);">v2.1</span> (2026-08-06): feedback RCP din accelerometrul telefonului (măsoară ritmul real de compresie, complementar metronomului), cronometru de rotație a salvatorilor la fiecare 2 minute integrat în metronomul RCP, link către cel mai apropiat spital/farmacie (singura funcție din PULS care iese din pagină și are nevoie de conexiune). <span style="font-family:var(--font-mono);">v2.0</span> (2026-08-06): cardul meu de urgență (QR local, personalizează Mod Urgență pe baza alergiilor tale notate, rezumat de predare pentru echipaj), triaj START interactiv cu tablou de victime multiple, semnalizare de urgență (sirenă, SOS Morse audio+ecran, strobe, bliț telefon unde e suportat), activare Mod Urgență prin scuturarea telefonului (procesare locală), cronometre în arsuri/ochi/convulsii, cronometru de garou cu badge persistent între secțiuni. 32 de secțiuni în total.
+    <b style="color:var(--ink-dim);">Istoric</b> — <span style="font-family:var(--font-mono);">v2.1.1</span> (2026-10-11): corecții de accesibilitate și de aspect pe mobil (repere, ordinea titlurilor, margini), politică CSP; conținutul medical nu s-a schimbat. <span style="font-family:var(--font-mono);">v2.1</span> (2026-08-06): feedback RCP din accelerometrul telefonului (măsoară ritmul real de compresie, complementar metronomului), cronometru de rotație a salvatorilor la fiecare 2 minute integrat în metronomul RCP, link către cel mai apropiat spital/farmacie (singura funcție din PULS care iese din pagină și are nevoie de conexiune). <span style="font-family:var(--font-mono);">v2.0</span> (2026-08-06): cardul meu de urgență (QR local, personalizează Mod Urgență pe baza alergiilor tale notate, rezumat de predare pentru echipaj), triaj START interactiv cu tablou de victime multiple, semnalizare de urgență (sirenă, SOS Morse audio+ecran, strobe, bliț telefon unde e suportat), activare Mod Urgență prin scuturarea telefonului (procesare locală), cronometre în arsuri/ochi/convulsii, cronometru de garou cu badge persistent între secțiuni. 32 de secțiuni în total.
     <details style="margin-top:4px;"><summary style="cursor:pointer;">versiuni mai vechi</summary>
     <span style="font-family:var(--font-mono);">v1.0</span> (2026-08-06): versiune inițială — 29 de secțiuni, mod Urgență cu 9 manevre ghidate, metronom RCP cu sunet/vibrație, test de cunoștințe, glosar A–Z. Conținutul de RCP/sufocare reflectă actualizările AHA/ILCOR din 2025 (adâncime compresii cu prag maxim, lovituri în spate la sufocarea adultului, tehnică nouă pentru compresii la sugari).
     </details>
