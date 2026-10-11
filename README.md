@@ -8,7 +8,7 @@ Ghid complet de prim ajutor, într-un singur fișier HTML.
 
 ## Ce este
 
-PULS (v2.1 în aplicație, „verificat 2026-08-06”) este un ghid de prim ajutor în limba română, cu 32 de secțiuni și un „Mod Urgență” care te conduce pas cu pas, cu voce, prin manevre. Conținutul este declarat educațional, bazat pe ghiduri ERC, AHA/ILCOR și OMS, și **nu înlocuiește** un curs autorizat, avizul medical sau intervenția profesională; în urgență reală se sună la 112.
+PULS (v2.1 în aplicație, „verificat 2026-08-06”) este un ghid de prim ajutor în limba română, cu 32 de secțiuni și un „Mod Urgență” care te conduce pas cu pas, cu voce, prin manevre. Conținutul este declarat educațional, redat de autor pe baza ghidurilor ERC, AHA/ILCOR și OMS, **fără validare clinică de către un instructor sau medic autorizat**, și **nu înlocuiește** un curs autorizat, avizul medical sau intervenția profesională; în urgență reală se sună la 112.
 
 ## Funcții
 
