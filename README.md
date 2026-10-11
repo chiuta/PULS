@@ -8,7 +8,7 @@ Ghid complet de prim ajutor, într-un singur fișier HTML.
 
 ## Ce este
 
-PULS (v2.1.1 în aplicație, actualizat 2026-10-11; conținutul medical a fost verificat ultima dată la 2026-08-06 și nu a fost reverificat clinic) este un ghid de prim ajutor în limba română, cu 32 de secțiuni și un „Mod Urgență” care te conduce pas cu pas, cu voce, prin manevre. Conținutul este declarat educațional, redat de autor pe baza ghidurilor ERC, AHA/ILCOR și OMS, **fără validare clinică de către un instructor sau medic autorizat**, și **nu înlocuiește** un curs autorizat, avizul medical sau intervenția profesională; în urgență reală se sună la 112.
+PULS (v2.1.2 în aplicație, actualizat 2026-10-11; conținutul medical a fost verificat ultima dată la 2026-08-06 și nu a fost reverificat clinic) este un ghid de prim ajutor în limba română, cu 32 de secțiuni și un „Mod Urgență” care te conduce pas cu pas, cu voce, prin manevre. Conținutul este declarat educațional, redat de autor pe baza ghidurilor ERC, AHA/ILCOR și OMS, **fără validare clinică de către un instructor sau medic autorizat**, și **nu înlocuiește** un curs autorizat, avizul medical sau intervenția profesională; în urgență reală se sună la 112.
 
 ## Funcții
 
@@ -18,7 +18,8 @@ PULS (v2.1.1 în aplicație, actualizat 2026-10-11; conținutul medical a fost v
 - Cardul meu de urgență (grupă sanguină, alergii, afecțiuni, medicație, contact) cu export/import `.json` și generare de cod QR local; datele personalizează avertismentele din Mod Urgență.
 - Triaj START cu listă de victime, semnalizare de urgență (sirenă, SOS Morse, strobe, bliț unde e suportat), activare Mod Urgență prin scuturarea telefonului (DeviceMotion).
 - Butoane „Sună 112”, „Trimite locația mea” (geolocalizare + Web Share), „Cel mai apropiat spital”.
-- Test de cunoștințe (până la zece întrebări pe rundă), tema Noapte/Zi, tipărirea secțiunii curente, buton „Raportează o eroare” (mailto).
+- **Căutare în ghid** (sidebar): caută în textul integral al celor 32 de secțiuni, fără diacritice (ex. „garou”, „musc”), filtrează meniul; Enter deschide secțiunea cea mai potrivită, Esc golește câmpul.
+- Test de cunoștințe (până la zece întrebări pe rundă), tema Noapte/Zi (la prima deschidere urmează preferința de sistem „lumină/întuneric”), tipărirea secțiunii curente, buton „Raportează o eroare” (mailto).
 
 ## Manual de utilizare
 
@@ -50,7 +51,10 @@ Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele 
 
 ## Istoric / Changelog
 
-Ultima actualizare: 11 octombrie 2026 — v2.1.1 (patch; conținutul medical neschimbat).
+Ultima actualizare: 11 octombrie 2026 — v2.1.2 (patch; conținutul medical neschimbat).
+- Căutare în tot ghidul din sidebar; tema inițială urmează `prefers-color-scheme`; hero-ul primei secțiuni are margini de 16 px pe ecrane ≤ 900 px (înainte 44 px interni, textul rămânea ~240 px lat pe 360 px). Hash-ul CSP recalculat; axe-core = 0 violări la 1280 și 360 px, în ambele teme.
+
+v2.1.1 (11 octombrie 2026):
 - Margini laterale de 16 px pe ecrane ≤ 900 px (înainte 44 px, care îngusta textul pe 360 px).
 - Accesibilitate: bara de sus este `<header>`, titlurile din subsol sunt h2 (ordine corectă); axe-core = 0 violări la 1280 și 360 px.
 - Adăugată politică CSP (`<meta>`): scripturi doar pe bază de hash, `connect-src 'none'`.
