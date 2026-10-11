@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-HuY3yiwPkmlvmOw3fzhYyASAoe9J/u7E6WArzz0N4DE=' 'sha256-5rWcUukMexZX8Ti+zQ5TeY1axaoHAxqC8vh/WTUyRGE='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; font-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; worker-src 'none'; manifest-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-HuY3yiwPkmlvmOw3fzhYyASAoe9J/u7E6WArzz0N4DE=' 'sha256-+4V8HjR5b9ce58zLzQgmtStp91V40tVpQXOe8VOH0gA='; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; font-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; worker-src 'none'; manifest-src 'none'">
 <title>PULS — Ghid complet de prim ajutor</title>
 <meta name="description" content="Ghid complet, off-line, de prim ajutor: resuscitare (RCP), sufocare, sângerări, arsuri, șoc anafilactic, AVC și multe altele — un singur fișier, fără cont, fără internet.">
 <style>
@@ -115,6 +115,8 @@ button{font-family:inherit;}
   width:38px;height:38px;border-radius:var(--radius);cursor:pointer;
   display:flex;align-items:center;justify-content:center;
 }
+.topbar #drawerBtn{width:auto;padding:0 10px;gap:6px;font-size:13px;font-weight:600;white-space:nowrap}
+@media (max-width:340px){.topbar #drawerBtn .dlbl{display:none}.topbar #drawerBtn{width:38px;padding:0}}
 .topbar .sosbtn{
   background:var(--pulse);border-color:var(--pulse);color:#fff;width:auto;padding:0 12px;
   font-weight:800;font-size:12.5px;letter-spacing:.03em;gap:6px;
@@ -515,7 +517,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
 <a href="#main" class="skip-link">Sări la conținut</a>
 
 <header class="topbar">
-  <button id="drawerBtn" aria-label="Deschide meniul" aria-expanded="false">☰</button>
+  <button id="drawerBtn" aria-label="Meniu: deschide lista de secțiuni" aria-expanded="false">☰ <span class="dlbl">Meniu</span></button>
   <div class="brand">PULS</div>
   <button class="sosbtn" id="sosBtnMobile" type="button">🆘 URGENȚĂ</button>
   <button id="themeBtnMobile" aria-label="Comută tema">◐</button>
@@ -527,7 +529,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   <div class="brandblock">
     <div class="brand"><span class="dot"></span> PULS</div>
     <div class="tagline">Ghid complet de prim ajutor · off-line</div>
-    <div class="tagline">v2.1.2 · actualizat 2026-10-11 · conținut verificat 2026-08-06</div>
+    <div class="tagline">v2.1.3 · actualizat 2026-10-11 · conținut verificat 2026-08-06</div>
     <div class="clock"><span>local <b id="localClock">--:--</b></span><span id="dateClock"></span></div>
   </div>
 
@@ -1497,7 +1499,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
   <h2>Cardul meu de urgență</h2>
   <p class="lede">Completează-l când ești calm, nu în timpul unei urgențe. Odată completat, informațiile de aici <b>personalizează automat</b> pașii din Mod Urgență (de exemplu, un avertisment dacă ai notat o alergie la aspirină) și pot fi arătate rapid unui echipaj medical la sosire.</p>
 
-  <div class="note">Totul rămâne <b>doar în acest browser, în memorie</b> — nimic nu se trimite pe niciun server. Exportă cardul ca fișier ca să nu-l pierzi la reîncărcarea paginii, și importă-l oricând, inclusiv pe alt telefon.</div>
+  <div class="note">Implicit, totul rămâne <b>doar în acest browser, în memorie</b> — nimic nu se trimite pe niciun server. Exportă cardul ca fișier ca să nu-l pierzi la reîncărcarea paginii, și importă-l oricând, inclusiv pe alt telefon — sau bifează mai jos păstrarea pe acest dispozitiv.</div>
 
   <h3><span class="n">§</span>Datele tale</h3>
   <div class="grid2">
@@ -1527,6 +1529,10 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
     <button class="btn" id="cardExportBtn" type="button">💾 Exportă (.json)</button>
     <button class="btn" id="cardImportBtn" type="button">📂 Importă</button>
     <input type="file" id="cardImportFile" accept="application/json" style="display:none;">
+  </div>
+  <div class="field" style="margin-top:10px;">
+    <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;cursor:pointer;"><input type="checkbox" id="cardKeep" style="margin-top:3px;"><span>Păstrează cardul pe acest dispozitiv (în acest browser, ca să nu se piardă la reîncărcare). <b>Oricine folosește acest browser îl poate vedea</b> — nu bifa pe un dispozitiv comun. Debifarea șterge copia păstrată.</span></label>
+    <button class="btn" id="cardClearBtn" type="button" style="margin-top:8px;">🗑 Șterge cardul (câmpuri și copia păstrată)</button>
   </div>
   <div id="cardStatus" aria-live="polite" style="font-size:12px;color:var(--ink-faint);"></div>
   <div id="cardQrWrap" style="display:none;text-align:center;margin-top:10px;">
@@ -1764,7 +1770,7 @@ kbd{font-family:var(--font-mono);background:var(--panel-2);border:1px solid var(
     </div>
   </div>
   <div style="margin-top:18px;font-size:11.5px;color:var(--ink-faint);line-height:1.7;">
-    <b style="color:var(--ink-dim);">Istoric</b> — <span style="font-family:var(--font-mono);">v2.1.2</span> (2026-10-11): căutare în tot ghidul (sidebar), tema inițială urmează preferința sistemului, margini corecte la prima secțiune pe mobil; conținutul medical nu s-a schimbat. <span style="font-family:var(--font-mono);">v2.1.1</span> (2026-10-11): corecții de accesibilitate și de aspect pe mobil (repere, ordinea titlurilor, margini), politică CSP; conținutul medical nu s-a schimbat. <span style="font-family:var(--font-mono);">v2.1</span> (2026-08-06): feedback RCP din accelerometrul telefonului (măsoară ritmul real de compresie, complementar metronomului), cronometru de rotație a salvatorilor la fiecare 2 minute integrat în metronomul RCP, link către cel mai apropiat spital/farmacie (singura funcție din PULS care iese din pagină și are nevoie de conexiune). <span style="font-family:var(--font-mono);">v2.0</span> (2026-08-06): cardul meu de urgență (QR local, personalizează Mod Urgență pe baza alergiilor tale notate, rezumat de predare pentru echipaj), triaj START interactiv cu tablou de victime multiple, semnalizare de urgență (sirenă, SOS Morse audio+ecran, strobe, bliț telefon unde e suportat), activare Mod Urgență prin scuturarea telefonului (procesare locală), cronometre în arsuri/ochi/convulsii, cronometru de garou cu badge persistent între secțiuni. 32 de secțiuni în total.
+    <b style="color:var(--ink-dim);">Istoric</b> — <span style="font-family:var(--font-mono);">v2.1.3</span> (2026-10-11): buton „Meniu” cu text vizibil în bara de sus pe mobil; cardul de urgență se poate păstra opțional pe dispozitiv (implicit rămâne doar în memorie) și are buton de ștergere; conținutul medical nu s-a schimbat. <span style="font-family:var(--font-mono);">v2.1.2</span> (2026-10-11): căutare în tot ghidul (sidebar), tema inițială urmează preferința sistemului, margini corecte la prima secțiune pe mobil; conținutul medical nu s-a schimbat. <span style="font-family:var(--font-mono);">v2.1.1</span> (2026-10-11): corecții de accesibilitate și de aspect pe mobil (repere, ordinea titlurilor, margini), politică CSP; conținutul medical nu s-a schimbat. <span style="font-family:var(--font-mono);">v2.1</span> (2026-08-06): feedback RCP din accelerometrul telefonului (măsoară ritmul real de compresie, complementar metronomului), cronometru de rotație a salvatorilor la fiecare 2 minute integrat în metronomul RCP, link către cel mai apropiat spital/farmacie (singura funcție din PULS care iese din pagină și are nevoie de conexiune). <span style="font-family:var(--font-mono);">v2.0</span> (2026-08-06): cardul meu de urgență (QR local, personalizează Mod Urgență pe baza alergiilor tale notate, rezumat de predare pentru echipaj), triaj START interactiv cu tablou de victime multiple, semnalizare de urgență (sirenă, SOS Morse audio+ecran, strobe, bliț telefon unde e suportat), activare Mod Urgență prin scuturarea telefonului (procesare locală), cronometre în arsuri/ochi/convulsii, cronometru de garou cu badge persistent între secțiuni. 32 de secțiuni în total.
     <details style="margin-top:4px;"><summary style="cursor:pointer;">versiuni mai vechi</summary>
     <span style="font-family:var(--font-mono);">v1.0</span> (2026-08-06): versiune inițială — 29 de secțiuni, mod Urgență cu 9 manevre ghidate, metronom RCP cu sunet/vibrație, test de cunoștințe, glosar A–Z. Conținutul de RCP/sufocare reflectă actualizările AHA/ILCOR din 2025 (adâncime compresii cu prag maxim, lovituri în spate la sufocarea adultului, tehnică nouă pentru compresii la sugari).
     </details>
@@ -5178,10 +5184,36 @@ function drawQrToCanvas(text, canvasEl){
     }
   }
 }
+const CARD_KEY = 'puls-card-v1';
+function cardStore(op){
+  try{
+    if(op==='clear') localStorage.removeItem(CARD_KEY);
+    else if(op==='save') localStorage.setItem(CARD_KEY, JSON.stringify(emergencyCard));
+    else if(op==='load'){ const raw = localStorage.getItem(CARD_KEY); return raw ? JSON.parse(raw) : null; }
+    return true;
+  }catch(e){ return op==='load' ? null : false; }
+}
 function initCard(){
+  const keepEl = $('#cardKeep');
+  const saved = cardStore('load');
+  if(saved && typeof saved==='object'){
+    CARD_FIELDS.forEach(([id,key])=>{ if(typeof saved[key]==='string'){ emergencyCard[key]=saved[key]; $('#'+id).value=saved[key]; } });
+    keepEl.checked = true;
+    $('#cardStatus').textContent = 'Card încărcat din copia păstrată pe acest dispozitiv.';
+  }
+  const persist = ()=>{ if(keepEl.checked && !cardStore('save')){ $('#cardStatus').textContent = 'Nu s-a putut păstra cardul (stocarea e blocată în acest browser) — exportă-l ca fișier.'; } };
   CARD_FIELDS.forEach(([id,key])=>{
     const el = $('#'+id);
-    el.addEventListener('input', ()=>{ emergencyCard[key]=el.value; renderCardPreview(); });
+    el.addEventListener('input', ()=>{ emergencyCard[key]=el.value; renderCardPreview(); persist(); });
+  });
+  keepEl.addEventListener('change', ()=>{
+    if(keepEl.checked){ $('#cardStatus').textContent = cardStore('save') ? 'Cardul este păstrat pe acest dispozitiv.' : 'Nu s-a putut păstra cardul (stocarea e blocată în acest browser) — exportă-l ca fișier.'; if($('#cardStatus').textContent.indexOf('Nu s-a')===0) keepEl.checked=false; }
+    else { cardStore('clear'); $('#cardStatus').textContent = 'Copia păstrată a fost ștearsă (cardul rămâne în pagină până la reîncărcare).'; }
+  });
+  $('#cardClearBtn').addEventListener('click', ()=>{
+    CARD_FIELDS.forEach(([id,key])=>{ emergencyCard[key]=''; $('#'+id).value=''; });
+    cardStore('clear'); keepEl.checked=false; renderCardPreview(); $('#cardQrWrap').style.display='none';
+    $('#cardStatus').textContent = 'Cardul a fost șters.';
   });
   renderCardPreview();
   $('#cardQrBtn').addEventListener('click', ()=>{
@@ -5205,7 +5237,7 @@ function initCard(){
       try{
         const data = JSON.parse(reader.result);
         CARD_FIELDS.forEach(([id,key])=>{ if(typeof data[key]==='string'){ emergencyCard[key]=data[key]; $('#'+id).value=data[key]; } });
-        renderCardPreview();
+        renderCardPreview(); persist();
         $('#cardStatus').textContent = 'Card importat.';
       }catch(err){ $('#cardStatus').textContent = 'Fișier invalid.'; }
     };
