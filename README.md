@@ -1,5 +1,7 @@
 # PULS
 
+**Versiune:** 2.1.4 · **Ultima actualizare:** 12 octombrie 2026
+
 Ghid complet de prim ajutor, într-un singur fișier HTML.
 
 **Live:** https://chiuta.github.io/PULS/
@@ -51,7 +53,9 @@ Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele 
 
 ## Istoric / Changelog
 
-Ultima actualizare: 11 octombrie 2026 — v2.1.3 (patch; conținutul medical neschimbat).
+- 2.1.4 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație (conținutul medical neschimbat).
+
+v2.1.3 (11 octombrie 2026):
 - Bara de sus pe mobil: butonul ☰ arată acum și textul „Meniu” (înainte doar o pictogramă); textul se ascunde sub 340 px.
 - Cardul meu de urgență: casetă opțională „Păstrează cardul pe acest dispozitiv” (implicit dezactivată; datele merg doar în `localStorage` al acestui browser, cu avertisment pentru dispozitive comune; debifarea șterge copia) și buton „Șterge cardul”. Fără bifă, cardul rămâne doar în memorie, ca până acum; exportul/importul `.json` neschimbat.
 - Hash-urile CSP recalculate; axe-core = 0 violări la 1280 și 360 px.
