@@ -65,7 +65,7 @@ Descarcă `index.html` și deschide-l în browser; ghidul funcționează fără 
 
 ## Licență
 
-Licența nu este încă declarată explicit în acest repository; vezi nota din aplicație. Aplicația menționează doar că biblioteca de coduri QR inclusă (qrcode-generator, Kazuhiko Arase) este sub licență MIT.
+MIT — vezi fișierul `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Bibliotecile terțe incluse în fișier își păstrează licențele proprii (de exemplu generatorul de coduri QR de Kazuhiko Arase, MIT).
 
 ## Audit
 
