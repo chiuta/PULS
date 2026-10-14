@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "slug": "puls",
+  "name": "PULS — Ghid complet de prim ajutor",
+  "version": "2.2.0",
+  "updated": "2026-10-14",
+  "description": "Ghid complet, off-line, de prim ajutor: resuscitare (RCP), sufocare, sângerări, arsuri, șoc anafilactic, AVC și multe altele — un singur fișier, fără cont, fără internet.",
+  "egress": [],
+  "permissions": [
+    "getUserMedia",
+    "geolocation",
+    "navigator.share",
+    "speechSynthesis",
+    "clipboard",
+    "serviceWorker",
+    "localStorage"
+  ],
+  "storageKeys": [],
+  "sizeBytes": 380350,
+  "sha256": "4d6a389eaa5a4f4b4be9aef94632de4bfe04df7f5d2b79105ecb11792465cccc",
+  "csp": {
+    "present": true,
+    "directives": {
+      "default-src": "'none'",
+      "script-src": "sha256×4",
+      "style-src": "'unsafe-inline'",
+      "img-src": "'self' data: blob:",
+      "media-src": "data: blob:",
+      "font-src": "data:",
+      "connect-src": "'none'",
+      "base-uri": "'none'",
+      "form-action": "'none'",
+      "frame-src": "'none'",
+      "object-src": "'none'",
+      "worker-src": "'self'",
+      "manifest-src": "'self'"
+    },
+    "scriptInline": "hash",
+    "connect": "'none'"
+  },
+  "features": {
+    "export": true,
+    "import": true,
+    "i18n": [],
+    "pwa": {
+      "manifest": true,
+      "serviceWorker": true
+    },
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "kit": {
+    "version": "1.0.0",
+    "modules": [
+      "core",
+      "label",
+      "bundle"
+    ]
+  },
+  "selfSerializing": false,
+  "egressNote": "Aplicația nu face cereri de rețea. Linkurile către hărți (maps.google.com) și către surse (crucearosie.ro, erc.edu, who.int etc.) se deschid doar dacă le apeși tu."
+}
