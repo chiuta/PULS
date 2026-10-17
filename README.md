@@ -56,7 +56,7 @@ Un clic (sau Enter) pe versiunea afișată (`v 2.2.0 · 2026-10-14`) deschide fe
 
 - **Stocare locală:** singura utilizare a `localStorage` (cheia `puls-card-v1`) este copia opțională a cardului de urgență, activă doar dacă bifezi „Păstrează cardul pe acest dispozitiv”; fără bifă, cardul rămâne doar în memoria paginii (exportă-l în fișier ca să nu-l pierzi). Niciun apel IndexedDB.
 - **Stocare locală (adăugire v2.2.0):** cheia `puls-haptic-v1` păstrează doar alegerea feedbackului haptic (`0`/`1`).
-- **Rețea:** nu există `fetch` sau resurse încărcate de pe alte site-uri; biblioteca QR este inclusă în fișier. Singurele ieșiri din pagină sunt linkuri/acțiuni inițiate de utilizator: harta Google (`maps.google.com`, `google.com/maps`) pentru spital/farmacie și locația partajată, apelul `tel:112`, `mailto:`, plus linkuri către surse (crucearosie.ro, cpr.heart.org, erc.edu, who.int, smurd.ro, antisuicid.ro, patreon.com, trom.tf, chiuta.github.io).
+- **Rețea:** nu există `fetch` sau resurse încărcate de pe alte site-uri; biblioteca QR este inclusă în fișier. Singurele ieșiri din pagină sunt linkuri/acțiuni inițiate de utilizator: harta Google (`maps.google.com`, `google.com/maps`) pentru spital/farmacie și locația partajată, apelul `tel:112`, `mailto:`, plus linkuri către surse (crucearosie.ro, cpr.heart.org, erc.edu, who.int, smurd.ro, antisuicid.ro, buymeacoffee.com, trom.tf, chiuta.github.io).
 - Aplicația declară: fără cookie-uri, fără analytics.
 
 ## Rulare locală / offline
