@@ -1,99 +1,101 @@
 # PULS
 
-**Versiune:** 2.2.0 · **Ultima actualizare:** 14 octombrie 2026
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-Ghid complet de prim ajutor, într-un singur fișier HTML.
+**Version:** 2.2.0 · **Last updated:** 2026-10-14
 
-**Live:** https://chiuta.github.io/PULS/
+A complete first-aid guide, in a single HTML file.
 
-![Captura de ecran](screenshot.png)
+**Live app:** https://chiuta.github.io/PULS/
 
-## Ce este
+![Screenshot](screenshot.png)
 
-PULS (v2.1.3 în aplicație, actualizat 2026-10-11; conținutul medical a fost verificat ultima dată la 2026-08-06 și nu a fost reverificat clinic) este un ghid de prim ajutor în limba română, cu 32 de secțiuni și un „Mod Urgență” care te conduce pas cu pas, cu voce, prin manevre. Conținutul este declarat educațional, redat de autor pe baza ghidurilor ERC, AHA/ILCOR și OMS, **fără validare clinică de către un instructor sau medic autorizat**, și **nu înlocuiește** un curs autorizat, avizul medical sau intervenția profesională; în urgență reală se sună la 112.
+## What it is
 
-## Funcții
+PULS (v2.1.3 in the application, updated 2026-10-11; the medical content was last checked on 2026-08-06 and has not been clinically re-verified) is a first-aid guide in Romanian, with 32 sections and an "Emergency Mode" that leads you step by step, by voice, through the manoeuvres. The content is declared educational, rendered by the author on the basis of the ERC, AHA/ILCOR and WHO guidelines, **without clinical validation by an authorized instructor or physician**, and it **does not replace** an authorized course, medical advice or professional intervention; in a real emergency, call 112.
 
-- **Secțiuni (§0–§31):** evaluarea situației, cum suni la 112, RCP și DEA, sufocare, sângerări și garou, șoc, anafilaxie, AVC, infarct, convulsii, hipoglicemie, hipotermie, insolație, înec, intoxicații, arsuri, electrocutare, fracturi, traumatisme cranio-cerebrale, plăgi, traumatisme oculare, mușcături și înțepături, poziția de siguranță, trusa de prim ajutor, cardul meu de urgență, triaj, semnalizare de urgență, prim ajutor pediatric și psihologic, test de cunoștințe, glosar A–Z.
-- **🆘 URGENȚĂ ACUM:** mod ghidat, cu pași și sinteză vocală (speechSynthesis din browser, acolo unde există).
-- Metronom RCP cu sunet și vibrație, cronometru de rotație a salvatorilor, feedback de ritm din accelerometru, cronometru de garou.
-- Cardul meu de urgență (grupă sanguină, alergii, afecțiuni, medicație, contact) cu export/import `.json` și generare de cod QR local; datele personalizează avertismentele din Mod Urgență.
-- Triaj START cu listă de victime, semnalizare de urgență (sirenă, SOS Morse, strobe, bliț unde e suportat), activare Mod Urgență prin scuturarea telefonului (DeviceMotion).
-- Butoane „Sună 112”, „Trimite locația mea” (geolocalizare + Web Share), „Cel mai apropiat spital”.
-- **Căutare în ghid** (sidebar): caută în textul integral al celor 32 de secțiuni, fără diacritice (ex. „garou”, „musc”), filtrează meniul; Enter deschide secțiunea cea mai potrivită, Esc golește câmpul.
-- Test de cunoștințe (până la zece întrebări pe rundă), tema Noapte/Zi (la prima deschidere urmează preferința de sistem „lumină/întuneric”), tipărirea secțiunii curente, buton „Raportează o eroare” (mailto).
+## Features
 
-## Funcții noi (v2.2.0, 14 octombrie 2026)
+- **Sections (§0–§31):** assessing the situation, how to call 112, CPR and AED, choking, bleeding and tourniquet, shock, anaphylaxis, stroke, heart attack, seizures, hypoglycaemia, hypothermia, heatstroke, drowning, poisoning, burns, electrocution, fractures, head injuries, wounds, eye injuries, bites and stings, recovery position, the first-aid kit, my emergency card, triage, emergency signalling, paediatric and psychological first aid, knowledge test, A–Z glossary.
+- **🆘 EMERGENCY NOW:** guided mode, with steps and speech synthesis (the browser's speechSynthesis, where available).
+- CPR metronome with sound and vibration, rescuer rotation timer, rhythm feedback from the accelerometer, tourniquet timer.
+- My emergency card (blood group, allergies, conditions, medication, contact) with `.json` export/import and local QR code generation; the data personalizes the warnings in Emergency Mode.
+- START triage with a casualty list, emergency signalling (siren, SOS Morse, strobe, flash where supported), activation of Emergency Mode by shaking the phone (DeviceMotion).
+- Buttons "Call 112", "Send my location" (geolocation + Web Share), "Nearest hospital".
+- **Search in the guide** (sidebar): searches the full text of the 32 sections, without diacritics (e.g. "garou", "musc"), filters the menu; Enter opens the best-matching section, Esc clears the field.
+- Knowledge test (up to ten questions per round), Night/Day theme (on first opening it follows the system "light/dark" preference), printing of the current section, "Report an error" button (mailto).
 
-**Conținutul medical (cele 32 de secțiuni, pașii din Mod Urgență, valorile și avertismentele) nu s-a schimbat**; verificat automat: textul secțiunilor este identic cu cel din v2.1.4, cu excepția unui buton adăugat în §25.
+## New features (v2.2.0, 14 October 2026)
 
-### Feedback haptic
-- Vibrații scurte, distincte, la acțiunile de interfață din Mod Urgență: deschidere, alegerea situației, pasul următor, pasul înapoi, ultimul pas, „A ajuns echipajul” și apăsarea „Sună 112”. Comutator în meniul din stânga și în bara Modului Urgență (📳); alegerea se păstrează în `localStorage` (cheia `puls-haptic-v1`). Implicit pornit acolo unde browserul oferă `navigator.vibrate`; fără API, comutatoarele sunt ascunse.
-- Vibrațiile **funcționale** existente (metronomul RCP, semnalizarea SOS, alertele cronometrelor) nu depind de acest comutator și au rămas neschimbate.
-- **Limită:** iOS/Safari nu oferă Vibration API, deci acolo nu se simte nimic; pe unele telefoane vibrația e dezactivată din setările sistemului.
+**The medical content (the 32 sections, the steps in Emergency Mode, the values and the warnings) has not changed**; verified automatically: the text of the sections is identical to that in v2.1.4, except for one button added in §25.
 
-### Card QR de urgență pe tot ecranul
-- Butonul „Card QR pe tot ecranul” (în §25) deschide un dialog cu un cod QR mare (cu zonă liberă de 4 module, cerută de cititoare) și cu textul cardului dedesubt, ca să poată fi citit și fără scanare; mai poate fi deschis din ecranul „A ajuns echipajul”. Ținem ecranul aprins cât dialogul e deschis (unde `Wake Lock` există). Opțiuni: salvare PNG și tipărire (doar cardul).
-- **Reparație:** codarea QR folosea Latin-1, deci diacriticele românești (ă, ș, ț) se stricau în codul generat; acum textul este codat UTF-8 (verificat prin decodare cu un cititor extern). Și codul mic din pagină are acum zonă liberă și o dimensiune mai mare.
-- **Confidențialitate:** codul și PNG-ul conțin datele cardului **în clar**; oricine scanează imaginea le citește. Tratează fișierul ca pe un document medical personal. Nimic nu pleacă din browser.
-- **Limită:** nu există garanția că orice aparat citește codul; capacitatea QR e limitată (câmpuri foarte lungi pot depăși capacitatea și aplicația afișează un mesaj).
+### Haptic feedback
+- Short, distinct vibrations on interface actions in Emergency Mode: opening, choosing the situation, next step, previous step, last step, "The crew has arrived" and pressing "Call 112". Toggle in the left-hand menu and in the Emergency Mode bar (📳); the choice is kept in `localStorage` (key `puls-haptic-v1`). On by default wherever the browser offers `navigator.vibrate`; without the API, the toggles are hidden.
+- The existing **functional** vibrations (the CPR metronome, the SOS signalling, the timer alerts) do not depend on this toggle and have remained unchanged.
+- **Limit:** iOS/Safari does not offer the Vibration API, so nothing is felt there; on some phones vibration is disabled in the system settings.
 
-### Transparență și copie de siguranță (fff-kit)
+### Full-screen emergency QR card
+- The button "Full-screen QR card" (in §25) opens a dialog with a large QR code (with a 4-module quiet zone, as required by readers) and the card's text below it, so that it can be read without scanning too; it can also be opened from the "The crew has arrived" screen. We keep the screen on while the dialog is open (where `Wake Lock` exists). Options: save as PNG and print (the card only).
+- **Fix:** the QR encoding used Latin-1, so Romanian diacritics (ă, ș, ț) were corrupted in the generated code; the text is now encoded as UTF-8 (verified by decoding with an external reader). The small code on the page also now has a quiet zone and a larger size.
+- **Privacy:** the code and the PNG contain the card's data **in clear text**; anyone who scans the image reads them. Treat the file as a personal medical document. Nothing leaves the browser.
+- **Limit:** there is no guarantee that every device reads the code; QR capacity is limited (very long fields may exceed the capacity and the application shows a message).
 
-Un clic (sau Enter) pe versiunea afișată (`v 2.2.0 · 2026-10-14`) deschide fereastra „Transparență”: gazdele de rețea declarate (0 cereri externe), cheile de stocare locală cu dimensiuni, API-urile folosite, mărimea și SHA-256 al fișierului (cu verificator pentru un fișier descărcat) și **copia de siguranță** a datelor aplicației într-un fișier `.fff.json` (opțional criptat cu parolă, AES-GCM 256 / PBKDF2; parola nu poate fi recuperată), import cu confirmare și ștergerea datelor aplicației. Kitul (`fff-kit`, module: core, label, bundle) este lipit în `index.html`, nu face cereri de rețea și nu schimbă datele existente; fără el aplicația funcționează la fel. Atenție: copia de siguranță a kitului conține, dacă ai bifat păstrarea pe dispozitiv, **și cardul tău de urgență** (`puls-card-v1`, date medicale personale). Folosește opțiunea „Exportă criptat” dacă fișierul va fi stocat sau trimis. Textele kitului sunt în 8 limbi (ro, en, fr, it, es, pt, hu, de); **traducerile fr/it/es/pt/hu/de sunt automate și neverificate nativ**. Interfața aplicației însăși rămâne în română.
+### Transparency and backup (fff-kit)
 
-## Manual de utilizare
+One click (or Enter) on the displayed version (`v 2.2.0 · 2026-10-14`) opens the "Transparency" dialog: the declared network hosts (0 external requests), the local storage keys with sizes, the APIs used, the size and SHA-256 of the file (with a verifier for a downloaded file) and the **backup** of the application's data into a `.fff.json` file (optionally encrypted with a password, AES-GCM 256 / PBKDF2; the password cannot be recovered), import with confirmation, and deletion of the application's data. The kit (`fff-kit`, modules: core, label, bundle) is pasted into `index.html`, makes no network requests and does not change existing data; without it the application works the same. Note: the kit's backup contains, if you ticked keeping it on the device, **your emergency card as well** (`puls-card-v1`, personal medical data). Use the "Export encrypted" option if the file will be stored or sent. The kit's texts are in 8 languages (ro, en, fr, it, es, pt, hu, de); **the fr/it/es/pt/hu/de translations are machine-made and not native-checked**. The application's own interface remains in Romanian.
 
-1. Deschide pagina; navighează cu meniul din stânga (sau ☰ pe mobil).
-2. Într-o urgență, apasă **🆘 URGENȚĂ ACUM**, alege situația și urmează pașii („Următorul pas →”, „← Înapoi”). Butonul „📞 SUNĂ 112 ACUM” inițiază apelul. `Esc` închide modul.
-3. Pentru RCP, deschide §3 și pornește metronomul (sunet/vibrație); respectă indicațiile pe ecran.
-4. În §2, „📍 Trimite locația mea” cere permisiunea de locație; „🏥 Cel mai apropiat spital” deschide harta telefonului.
-5. Completează „Cardul meu de urgență” (§25) cât ești calm; „💾 Exportă (.json)” salvează cardul, „📂 Importă” îl restaurează, „▦ Generează cod QR” creează un cod citibil de orice cititor QR.
-6. Schimbă tema cu „☾ Noapte” / „☀ Zi”; „🖨️ Printează secțiunea curentă” tipărește secțiunea.
-7. Exersează cu §30 Test de cunoștințe; caută termeni în §31 Glosar.
+## User guide
 
-## Confidențialitate și rețea
+1. Open the page; navigate with the left-hand menu (or ☰ on mobile).
+2. In an emergency, press **🆘 EMERGENCY NOW**, choose the situation and follow the steps ("Next step →", "← Back"). The button "📞 CALL 112 NOW" starts the call. `Esc` closes the mode.
+3. For CPR, open §3 and start the metronome (sound/vibration); follow the on-screen instructions.
+4. In §2, "📍 Send my location" asks for location permission; "🏥 Nearest hospital" opens the phone's map.
+5. Fill in "My emergency card" (§25) while you are calm; "💾 Export (.json)" saves the card, "📂 Import" restores it, "▦ Generate QR code" creates a code readable by any QR reader.
+6. Change the theme with "☾ Night" / "☀ Day"; "🖨️ Print the current section" prints the section.
+7. Practise with §30 Knowledge test; look up terms in §31 Glossary.
 
-- **Stocare locală:** singura utilizare a `localStorage` (cheia `puls-card-v1`) este copia opțională a cardului de urgență, activă doar dacă bifezi „Păstrează cardul pe acest dispozitiv”; fără bifă, cardul rămâne doar în memoria paginii (exportă-l în fișier ca să nu-l pierzi). Niciun apel IndexedDB.
-- **Stocare locală (adăugire v2.2.0):** cheia `puls-haptic-v1` păstrează doar alegerea feedbackului haptic (`0`/`1`).
-- **Rețea:** nu există `fetch` sau resurse încărcate de pe alte site-uri; biblioteca QR este inclusă în fișier. Singurele ieșiri din pagină sunt linkuri/acțiuni inițiate de utilizator: harta Google (`maps.google.com`, `google.com/maps`) pentru spital/farmacie și locația partajată, apelul `tel:112`, `mailto:`, plus linkuri către surse (crucearosie.ro, cpr.heart.org, erc.edu, who.int, smurd.ro, antisuicid.ro, buymeacoffee.com, trom.tf, chiuta.github.io).
-- Aplicația declară: fără cookie-uri, fără analytics.
+## Privacy and network
 
-## Rulare locală / offline
+- **Local storage:** the only use of `localStorage` (key `puls-card-v1`) is the optional copy of the emergency card, active only if you tick "Keep the card on this device"; without the tick, the card stays only in the page's memory (export it to a file so as not to lose it). No IndexedDB calls.
+- **Local storage (v2.2.0 addition):** the key `puls-haptic-v1` stores only the haptic feedback choice (`0`/`1`).
+- **Network:** there is no `fetch` or resource loaded from other sites; the QR library is included in the file. The only exits from the page are user-initiated links/actions: Google Maps (`maps.google.com`, `google.com/maps`) for hospital/pharmacy and the shared location, the `tel:112` call, `mailto:`, plus links to sources (crucearosie.ro, cpr.heart.org, erc.edu, who.int, smurd.ro, antisuicid.ro, buymeacoffee.com, trom.tf, chiuta.github.io).
+- The application declares: no cookies, no analytics.
 
-Descarcă `index.html` și deschide-l în browser; ghidul funcționează fără internet. Doar butoanele de hartă/spital și partajarea locației au nevoie de conexiune și de aplicații ale dispozitivului.
+## Running locally / offline
 
-## Licență
+Download `index.html` and open it in a browser; the guide works without internet. Only the map/hospital buttons and location sharing need a connection and the device's apps.
 
-MIT — vezi fișierul `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Bibliotecile terțe incluse în fișier își păstrează licențele proprii (de exemplu generatorul de coduri QR de Kazuhiko Arase, MIT).
+## License
+
+MIT — see the `LICENSE` file. © 2026 Alexandru-Ionuț Chiuță (Alexio). Third-party libraries included in the file keep their own licenses (for example the QR code generator by Kazuhiko Arase, MIT).
 
 ## Audit
 
-Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele teme); verificat în cod: fără `fetch`, fără `localStorage`. Corectate: meniul/layoutul pentru ecrane înguste (regulile CSS pentru ☰ lipseau), contrastul culorilor. Conținutul medical a fost doar parcurs, nu validat clinic — pentru verificare cere avizul unui specialist/instructor autorizat.
+Audit: 2026-10-10 — verified with Playwright and axe-core (WCAG 2.1 AA, both themes); verified in code: no `fetch`, no `localStorage`. Fixed: the menu/layout for narrow screens (the CSS rules for ☰ were missing), colour contrast. The medical content was only reviewed, not clinically validated — for verification, ask for the opinion of an authorized specialist/instructor.
 
-## Istoric / Changelog
-- 2.2.0 — 2026-10-14: feedback haptic opțional pentru pașii din Mod Urgență; card QR de urgență pe tot ecranul (PNG, tipărire); reparat QR pentru diacritice (UTF-8); kit fff-kit (Transparență + copie de siguranță). Conținutul medical neschimbat.
+## History / Changelog
+- 2.2.0 — 2026-10-14: optional haptic feedback for the steps in Emergency Mode; full-screen emergency QR card (PNG, printing); fixed QR for diacritics (UTF-8); fff-kit (Transparency + backup). Medical content unchanged.
 
-- 2.1.4 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație (conținutul medical neschimbat).
+- 2.1.4 — 2026-10-12: the version and the date of the last update are shown in the application (medical content unchanged).
 
-v2.1.3 (11 octombrie 2026):
-- Bara de sus pe mobil: butonul ☰ arată acum și textul „Meniu” (înainte doar o pictogramă); textul se ascunde sub 340 px.
-- Cardul meu de urgență: casetă opțională „Păstrează cardul pe acest dispozitiv” (implicit dezactivată; datele merg doar în `localStorage` al acestui browser, cu avertisment pentru dispozitive comune; debifarea șterge copia) și buton „Șterge cardul”. Fără bifă, cardul rămâne doar în memorie, ca până acum; exportul/importul `.json` neschimbat.
-- Hash-urile CSP recalculate; axe-core = 0 violări la 1280 și 360 px.
+v2.1.3 (11 October 2026):
+- Top bar on mobile: the ☰ button now also shows the text "Menu" (previously only an icon); the text is hidden below 340 px.
+- My emergency card: optional box "Keep the card on this device" (off by default; the data goes only to this browser's `localStorage`, with a warning for shared devices; unticking deletes the copy) and a "Delete the card" button. Without the tick, the card stays only in memory, as before; the `.json` export/import is unchanged.
+- CSP hashes recomputed; axe-core = 0 violations at 1280 and 360 px.
 
-v2.1.2 (11 octombrie 2026):
-- Căutare în tot ghidul din sidebar; tema inițială urmează `prefers-color-scheme`; hero-ul primei secțiuni are margini de 16 px pe ecrane ≤ 900 px (înainte 44 px interni, textul rămânea ~240 px lat pe 360 px). Hash-ul CSP recalculat; axe-core = 0 violări la 1280 și 360 px, în ambele teme.
+v2.1.2 (11 October 2026):
+- Search across the whole guide in the sidebar; the initial theme follows `prefers-color-scheme`; the hero of the first section has 16 px margins on screens ≤ 900 px (previously 44 px of padding, the text stayed ~240 px wide at 360 px). CSP hash recomputed; axe-core = 0 violations at 1280 and 360 px, in both themes.
 
-v2.1.1 (11 octombrie 2026):
-- Margini laterale de 16 px pe ecrane ≤ 900 px (înainte 44 px, care îngusta textul pe 360 px).
-- Accesibilitate: bara de sus este `<header>`, titlurile din subsol sunt h2 (ordine corectă); axe-core = 0 violări la 1280 și 360 px.
-- Adăugată politică CSP (`<meta>`): scripturi doar pe bază de hash, `connect-src 'none'`.
-- Licența rămâne nedeclarată (decizie a autorului).
+v2.1.1 (11 October 2026):
+- Side margins of 16 px on screens ≤ 900 px (previously 44 px, which narrowed the text at 360 px).
+- Accessibility: the top bar is a `<header>`, the footer headings are h2 (correct order); axe-core = 0 violations at 1280 and 360 px.
+- Added a CSP policy (`<meta>`): scripts only by hash, `connect-src 'none'`.
+- The license remains undeclared (the author's decision).
 
-## Autor
+## Author
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 
-## English summary
+## Summary
 
 PULS is a Romanian-language first-aid guide in a single HTML file: 32 sections, a voice-guided Emergency Mode, CPR metronome, tourniquet timer, emergency card with local QR code, START triage and emergency signalling. No fetch calls; localStorage only if you opt in to keep the emergency card on the device; map/hospital buttons open external services only on click. Educational content, not a substitute for certified training or calling the emergency number.
