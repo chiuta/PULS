@@ -10,7 +10,7 @@ Guia completo de primeiros socorros, num único ficheiro HTML.
 
 **Aplicação online:** https://chiuta.github.io/PULS/
 
-![Captura de ecrã](screenshot.png)
+![Captura de ecrã](screenshot.pt.png)
 
 ## O que é
 

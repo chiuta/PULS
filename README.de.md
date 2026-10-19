@@ -10,7 +10,7 @@ Vollständiger Erste-Hilfe-Leitfaden in einer einzigen HTML-Datei.
 
 **Online-App:** https://chiuta.github.io/PULS/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.de.png)
 
 ## Was es ist
 

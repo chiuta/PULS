@@ -10,7 +10,7 @@ A complete first-aid guide, in a single HTML file.
 
 **Live app:** https://chiuta.github.io/PULS/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.en.png)
 
 ## What it is
 

@@ -10,7 +10,7 @@ Guía completa de primeros auxilios, en un único archivo HTML.
 
 **Aplicación en línea:** https://chiuta.github.io/PULS/
 
-![Captura de pantalla](screenshot.png)
+![Captura de pantalla](screenshot.es.png)
 
 ## Qué es
 

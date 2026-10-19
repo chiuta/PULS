@@ -10,7 +10,7 @@ Teljes elsősegély-útmutató egyetlen HTML-fájlban.
 
 **Online alkalmazás:** https://chiuta.github.io/PULS/
 
-![Képernyőkép](screenshot.png)
+![Képernyőkép](screenshot.hu.png)
 
 ## Mi ez
 

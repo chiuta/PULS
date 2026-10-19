@@ -10,7 +10,7 @@ Guide complet de premiers secours, dans un seul fichier HTML.
 
 **Application en ligne :** https://chiuta.github.io/PULS/
 
-![Capture d'écran](screenshot.png)
+![Capture d'écran](screenshot.fr.png)
 
 ## Présentation
 

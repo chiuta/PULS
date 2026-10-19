@@ -10,7 +10,7 @@ Guida completa di primo soccorso, in un unico file HTML.
 
 **App online:** https://chiuta.github.io/PULS/
 
-![Schermata](screenshot.png)
+![Schermata](screenshot.it.png)
 
 ## Che cos'è
 

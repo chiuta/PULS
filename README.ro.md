@@ -10,7 +10,7 @@ Ghid complet de prim ajutor, într-un singur fișier HTML.
 
 **Live:** https://chiuta.github.io/PULS/
 
-![Captura de ecran](screenshot.png)
+![Captura de ecran](screenshot.ro.png)
 
 ## Ce este
 
