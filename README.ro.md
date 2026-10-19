@@ -98,6 +98,6 @@ v2.1.1 (11 octombrie 2026):
 
 Alexio — Alexandru-Ionuț Chiuță, contact: alexio@trom.tf
 
-## English summary
+## Rezumat
 
-PULS is a Romanian-language first-aid guide in a single HTML file: 32 sections, a voice-guided Emergency Mode, CPR metronome, tourniquet timer, emergency card with local QR code, START triage and emergency signalling. No fetch calls; localStorage only if you opt in to keep the emergency card on the device; map/hospital buttons open external services only on click. Educational content, not a substitute for certified training or calling the emergency number.
+PULS este un ghid de prim ajutor în limba română, într-un singur fișier HTML: 32 de secțiuni, un Mod Urgență ghidat vocal, metronom RCP, cronometru pentru garou, card de urgență cu cod QR local, triaj START și semnalizare de urgență. Fără apeluri fetch; localStorage doar dacă alegi să păstrezi cardul de urgență pe dispozitiv; butoanele de hartă/spital deschid servicii externe doar la clic. Conținut educațional, nu înlocuiește instruirea certificată sau apelarea numărului de urgență.
