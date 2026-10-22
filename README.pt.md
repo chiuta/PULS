@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 2.3.3 · **Última atualização:** 2026-10-22
+**Versão:** 2.3.4 · **Última atualização:** 2026-10-22
 
 Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,7 @@ MIT — veja o ficheiro `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). A
 Auditoria: 2026-10-10 — verificado com Playwright e axe-core (WCAG 2.1 AA, ambos os temas); verificado no código: sem `fetch`, sem `localStorage`. Corrigidos: o menu/disposição para ecrãs estreitos (faltavam as regras CSS para ☰), o contraste das cores. O conteúdo médico foi apenas percorrido, não validado clinicamente — para verificação, peça o parecer de um especialista/formador autorizado.
 
 ## Histórico / Registo de alterações
+- 2.3.4 — 2026-10-22: fff-kit 1.1.2: PBKDF2 com 600.000 iterações, proteção anti-clickjacking
 - 2.3.3 — 2026-10-22: Acessibilidade: um único H1 na página (o título da página inicial é um elemento de nível 2 anunciado como nível 1; o aspeto não muda). Telemóvel: todo o texto passa a um mínimo de 12 px; as ligações do rodapé e o interruptor «versões anteriores» têm uma área de toque maior; os botões URGÊNCIA têm pelo menos 44-48 px de altura.
 - 2.3.2 — 2026-10-19: todo o guia, o teste, o glossário, o Modo Emergência e a orientação por voz estão traduzidos para en, fr, it, es, pt, de, hu (cerca de 1180 chaves novas); na 2.3.2 também o título e a meta descrição da página seguem o idioma. A frase «continua em romeno» foi removida. O conteúdo médico precisa de revisão por um médico ou instrutor autorizado.
 - 2.2.0 — 2026-10-14: feedback háptico opcional para os passos do Modo Emergência; cartão QR de emergência em ecrã inteiro (PNG, impressão); QR corrigido para diacríticos (UTF-8); fff-kit (Transparência + cópia de segurança). Conteúdo médico inalterado.

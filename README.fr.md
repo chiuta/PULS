@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 2.3.3 · **Dernière mise à jour :** 2026-10-22
+**Version :** 2.3.4 · **Dernière mise à jour :** 2026-10-22
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,7 @@ MIT — voir le fichier `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). L
 Audit : 2026-10-10 — vérifié avec Playwright et axe-core (WCAG 2.1 AA, les deux thèmes) ; vérifié dans le code : pas de `fetch`, pas de `localStorage`. Corrigés : le menu/la mise en page pour les écrans étroits (les règles CSS pour ☰ manquaient), le contraste des couleurs. Le contenu médical a seulement été parcouru, non validé cliniquement — pour une vérification, demandez l'avis d'un spécialiste/formateur agréé.
 
 ## Historique / Journal des modifications
+- 2.3.4 — 2026-10-22 : fff-kit 1.1.2 : PBKDF2 à 600 000 itérations, protection anti-clickjacking
 - 2.3.3 — 2026-10-22: Accessibilité : un seul H1 dans la page (le titre de l'accueil est un élément de niveau 2 annoncé comme niveau 1 ; l'apparence est inchangée). Mobile : tout le texte passe à 12 px minimum ; les liens du pied de page et le bouton « versions antérieures » ont une zone tactile plus grande ; les boutons URGENCE font au moins 44-48 px de haut.
 - 2.3.2 — 2026-10-19 : tout le guide, le test, le glossaire, le Mode Urgence et le guidage vocal sont traduits en en, fr, it, es, pt, de, hu (environ 1 180 nouvelles clés) ; en 2.3.2, le titre et la méta-description de la page suivent aussi la langue. La phrase « reste en roumain » a été supprimée. Le contenu médical doit être relu par un médecin ou un instructeur agréé.
 - 2.2.0 — 2026-10-14 : retour haptique facultatif pour les étapes du Mode Urgence ; carte QR d'urgence en plein écran (PNG, impression) ; QR corrigé pour les diacritiques (UTF-8) ; fff-kit (Transparence + sauvegarde). Contenu médical inchangé.

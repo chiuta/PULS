@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 2.3.3 · **Última actualización:** 2026-10-22
+**Versión:** 2.3.4 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,7 @@ MIT — véase el archivo `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio).
 Auditoría: 2026-10-10 — comprobado con Playwright y axe-core (WCAG 2.1 AA, ambos temas); comprobado en el código: sin `fetch`, sin `localStorage`. Corregidos: el menú/diseño para pantallas estrechas (faltaban las reglas CSS para ☰), el contraste de los colores. El contenido médico solo fue revisado, no validado clínicamente — para su verificación, solicita el dictamen de un especialista/instructor autorizado.
 
 ## Historial / Registro de cambios
+- 2.3.4 — 2026-10-22: fff-kit 1.1.2: PBKDF2 con 600.000 iteraciones, protección anti-clickjacking
 - 2.3.3 — 2026-10-22: Accesibilidad: un solo H1 en la página (el título de inicio es un elemento de nivel 2 anunciado como nivel 1; el aspecto no cambia). Móvil: todo el texto pasa a un mínimo de 12 px; los enlaces del pie y el conmutador «versiones anteriores» tienen un área táctil mayor; los botones URGENCIA miden al menos 44-48 px de alto.
 - 2.3.2 — 2026-10-19: toda la guía, el test, el glosario, el Modo Emergencia y la guía por voz están traducidos a en, fr, it, es, pt, de, hu (unas 1180 claves nuevas); en la 2.3.2 también el título y la meta descripción de la página siguen el idioma. Se eliminó la frase «sigue en rumano». El contenido médico requiere revisión por un médico o un instructor autorizado.
 - 2.2.0 — 2026-10-14: retroalimentación háptica opcional para los pasos del Modo Urgencia; tarjeta QR de emergencia a pantalla completa (PNG, impresión); QR corregido para los diacríticos (UTF-8); fff-kit (Transparencia + copia de seguridad). Contenido médico sin cambios.
