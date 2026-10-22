@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.3.4 · **Ultima actualizare:** 2026-10-22
+**Versiune:** 2.3.5 · **Ultima actualizare:** 2026-10-22
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,10 @@ MIT — vezi fișierul `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Bi
 Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele teme); verificat în cod: fără `fetch`, fără `localStorage`. Corectate: meniul/layoutul pentru ecrane înguste (regulile CSS pentru ☰ lipseau), contrastul culorilor. Conținutul medical a fost doar parcurs, nu validat clinic — pentru verificare cere avizul unui specialist/instructor autorizat.
 
 ## Istoric / Changelog
+
+### 2.3.5 — 2026-10-22
+
+fff-kit 1.1.4: ținte tactile și text minim; ținte tactile/text corectate.
 - 2.3.4 — 2026-10-22: fff-kit 1.1.2: PBKDF2 600 000 iterații, protecție anti-clickjacking
 - 2.3.3 — 2026-10-22: Accesibilitate: exact un singur H1 în pagină (titlul de pe prima pagină e acum un element de nivel 2 anunțat ca nivel 1; aspectul e neschimbat). Mobil: tot textul are minimum 12 px; linkurile din subsol și comutatorul „versiuni mai vechi” au o zonă de atingere mai mare; butoanele URGENȚĂ au cel puțin 44-48 px înălțime.
 - 2.3.2 — 2026-10-19: tot ghidul, testul, glosarul, Modul Urgență și ghidarea vocală sunt traduse în en, fr, it, es, pt, de, hu (circa 1.180 de chei noi); în 2.3.2 și titlul și meta descrierea paginii urmează limba. Fraza „rămâne în română” a fost eliminată. Conținutul medical necesită revizie de către un medic sau un instructor autorizat.
