@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.3.2 · **Last updated:** 2026-10-19
+**Version:** 2.3.3 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,7 @@ MIT — see the `LICENSE` file. © 2026 Alexandru-Ionuț Chiuță (Alexio). Thir
 Audit: 2026-10-10 — verified with Playwright and axe-core (WCAG 2.1 AA, both themes); verified in code: no `fetch`, no `localStorage`. Fixed: the menu/layout for narrow screens (the CSS rules for ☰ were missing), colour contrast. The medical content was only reviewed, not clinically validated — for verification, ask for the opinion of an authorized specialist/instructor.
 
 ## History / Changelog
+- 2.3.3 — 2026-10-22: Accessibility: exactly one H1 in the page (the home title is now a level-2 element announced as level 1; the look is unchanged). Mobile: all text raised to at least 12 px; footer links and the "older versions" toggle have a larger tap area; the EMERGENCY buttons are at least 44-48 px tall.
 - 2.3.2 — 2026-10-19: the whole guide, the test, the glossary, the Emergency Mode and the voice guidance are translated into en, fr, it, es, pt, de, hu (about 1,180 new keys); in 2.3.2 the page title and meta description also follow the language. The line "stays in Romanian" was removed. The medical content needs review by a physician or an authorized instructor.
 - 2.2.0 — 2026-10-14: optional haptic feedback for the steps in Emergency Mode; full-screen emergency QR card (PNG, printing); fixed QR for diacritics (UTF-8); fff-kit (Transparency + backup). Medical content unchanged.
 

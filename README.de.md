@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 2.3.2 · **Zuletzt aktualisiert:** 2026-10-19
+**Version:** 2.3.3 · **Zuletzt aktualisiert:** 2026-10-22
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,7 @@ MIT — siehe die Datei `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). D
 Audit: 2026-10-10 — geprüft mit Playwright und axe-core (WCAG 2.1 AA, beide Designs); im Code geprüft: kein `fetch`, kein `localStorage`. Korrigiert: das Menü/Layout für schmale Bildschirme (die CSS-Regeln für ☰ fehlten), der Farbkontrast. Der medizinische Inhalt wurde nur durchgesehen, nicht klinisch validiert — für eine Überprüfung frage den Rat eines zugelassenen Spezialisten/Ausbilders ein.
 
 ## Verlauf / Changelog
+- 2.3.3 — 2026-10-22: Barrierefreiheit: genau eine H1 auf der Seite (der Startseitentitel ist ein H2-Element, das als Ebene 1 angekündigt wird; das Aussehen bleibt gleich). Mobil: Aller Text hat mindestens 12 px; Links in der Fußzeile und der Schalter „ältere Versionen“ haben eine größere Tippfläche; die NOTFALL-Schaltflächen sind mindestens 44-48 px hoch.
 - 2.3.2 — 2026-10-19: der gesamte Leitfaden, der Test, das Glossar, der Notfallmodus und die Sprachführung sind nach en, fr, it, es, pt, de, hu übersetzt (rund 1.180 neue Schlüssel); in 2.3.2 folgen auch Seitentitel und Meta-Beschreibung der Sprache. Der Satz „bleibt auf Rumänisch“ wurde entfernt. Die medizinischen Inhalte müssen von einem Arzt oder einem autorisierten Ausbilder geprüft werden.
 - 2.2.0 — 2026-10-14: optionales haptisches Feedback für die Schritte im Notfallmodus; Notfall-QR-Karte im Vollbild (PNG, Drucken); QR für diakritische Zeichen repariert (UTF-8); fff-kit (Transparenz + Sicherungskopie). Medizinischer Inhalt unverändert.
 

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 2.3.2 · **Ultimo aggiornamento:** 2026-10-19
+**Versione:** 2.3.3 · **Ultimo aggiornamento:** 2026-10-22
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,7 @@ MIT — vedi il file `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Le l
 Audit: 2026-10-10 — verificato con Playwright e axe-core (WCAG 2.1 AA, entrambi i temi); verificato nel codice: nessun `fetch`, nessun `localStorage`. Corretti: il menu/layout per gli schermi stretti (mancavano le regole CSS per ☰), il contrasto dei colori. Il contenuto medico è stato solo esaminato, non validato clinicamente — per la verifica, chiedi il parere di uno specialista/istruttore autorizzato.
 
 ## Cronologia / Changelog
+- 2.3.3 — 2026-10-22: Accessibilità: un solo H1 nella pagina (il titolo della home è un elemento di livello 2 annunciato come livello 1; l'aspetto è invariato). Mobile: tutto il testo arriva ad almeno 12 px; i link del piè di pagina e il pulsante «versioni precedenti» hanno un'area di tocco più grande; i pulsanti URGENZA sono alti almeno 44-48 px.
 - 2.3.2 — 2026-10-19: tutta la guida, il test, il glossario, la Modalità Emergenza e la guida vocale sono tradotti in en, fr, it, es, pt, de, hu (circa 1.180 nuove chiavi); nella 2.3.2 anche il titolo e la meta descrizione della pagina seguono la lingua. La frase «resta in rumeno» è stata rimossa. Il contenuto medico richiede la revisione di un medico o di un istruttore autorizzato.
 - 2.2.0 — 2026-10-14: feedback aptico facoltativo per i passaggi della Modalità Emergenza; scheda QR di emergenza a schermo intero (PNG, stampa); corretto il QR per i segni diacritici (UTF-8); fff-kit (Trasparenza + copia di riserva). Contenuto medico invariato.
 

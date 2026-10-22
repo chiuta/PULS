@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 2.3.2 · **Utolsó frissítés:** 2026-10-19
+**Verzió:** 2.3.3 · **Utolsó frissítés:** 2026-10-22
 
 A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,7 @@ MIT — lásd a `LICENSE` fájlt. © 2026 Alexandru-Ionuț Chiuță (Alexio). A 
 Audit: 2026-10-10 — Playwrighttal és axe-core-ral ellenőrizve (WCAG 2.1 AA, mindkét téma); kódban ellenőrizve: nincs `fetch`, nincs `localStorage`. Javítva: a menü/elrendezés keskeny képernyőkön (hiányoztak a ☰ CSS-szabályai), a színkontraszt. Az orvosi tartalmat csak átnéztük, klinikailag nem hagytuk jóvá — az ellenőrzéshez kérd ki egy hivatalosan képesített szakember/oktató véleményét.
 
 ## Előzmények / Változásnapló
+- 2.3.3 — 2026-10-22: Akadálymentesség: pontosan egy H1 az oldalon (a kezdőlap címe 2. szintű elem, 1. szintűként felolvasva; a megjelenés nem változik). Mobil: minden szöveg legalább 12 px; a lábléc hivatkozásai és a „régebbi verziók” kapcsoló nagyobb érintési felületű; a SÜRGŐSSÉG gombok legalább 44-48 px magasak.
 - 2.3.2 — 2026-10-19: az egész útmutató, a teszt, a szójegyzék, a Vészhelyzeti mód és a hangos vezetés le van fordítva en, fr, it, es, pt, de, hu nyelvre (kb. 1180 új kulcs); a 2.3.2-ben az oldal címe és meta leírása is követi a nyelvet. Eltávolítottuk a „románul marad” mondatot. Az orvosi tartalmat orvosnak vagy hivatalos oktatónak kell felülvizsgálnia.
 - 2.2.0 — 2026-10-14: opcionális haptikus visszajelzés a Vészhelyzet mód lépéseihez; teljes képernyős vészhelyzeti QR-kártya (PNG, nyomtatás); QR-javítás az ékezetes betűkhöz (UTF-8); fff-kit (Átláthatóság + biztonsági mentés). Az orvosi tartalom változatlan.
 
