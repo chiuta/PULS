@@ -21,8 +21,8 @@ console.log("1. pornire și versiune");
   check("0 erori", st.errs.length === 0, st.errs);
   check("0 cereri de rețea", st.net.length === 0, st.net);
   check("0 violări CSP", (await page.evaluate(() => window.__csp)).length === 0);
-  check("meta application-version 2.3.6", (await page.getAttribute('meta[name="application-version"]', "content")) === "2.3.6");
-  check("#app-version", /2\.3\.6 · 2026-10-23/.test(await page.textContent("#app-version")));
+  check("meta application-version 2.3.7", (await page.getAttribute('meta[name="application-version"]', "content")) === "2.3.7");
+  check("#app-version", /2\.3\.7 · 2026-10-23/.test(await page.textContent("#app-version")));
   check("fără depășire orizontală", (await hOverflow(page)) <= 0);
   await browser.close();
 }
@@ -160,6 +160,27 @@ console.log("5. accesibilitate");
   v = await axeRun(page); if (v) check("axe 0 violări (Mod Urgență cu buton haptic)", v.length === 0, v);
   await browser.close();
 }
+console.log("6. import card: validare și reimport");
+{
+  const {browser, page, st} = await launch({init: VIB});
+  await page.waitForTimeout(800);
+  await page.evaluate(() => document.querySelector('[data-sec="card"]').click());
+  const imp = (name, body) => page.setInputFiles("#cardImportFile", {name, mimeType: "application/json", buffer: Buffer.from(body)});
+  await imp("a.json", "null"); await page.waitForTimeout(200);
+  check("JSON null respins", /invalid/i.test(await page.textContent("#cardStatus")));
+  await imp("b.json", "[1,2]"); await page.waitForTimeout(200);
+  check("listă respinsă", /invalid/i.test(await page.textContent("#cardStatus")));
+  await imp("c.json", JSON.stringify({nume: "Ion"})); await page.waitForTimeout(200);
+  check("obiect valid importat", /importat/i.test(await page.textContent("#cardStatus")) && (await page.inputValue("#cardNume")) === "Ion");
+  await page.fill("#cardNume", "");
+  await imp("c.json", JSON.stringify({nume: "Ion"})); await page.waitForTimeout(200);
+  check("același fișier se poate reimporta", (await page.inputValue("#cardNume")) === "Ion");
+  await imp("big.json", JSON.stringify({nume: "x".repeat(300000)})); await page.waitForTimeout(200);
+  check("fișier >256 KB respins", /invalid/i.test(await page.textContent("#cardStatus")) && (await page.inputValue("#cardNume")) === "Ion");
+  check("fără erori", st.errs.length === 0, st.errs);
+  await browser.close();
+}
+
 fs.rmSync(tmp, {recursive: true, force: true});
 
 console.log("K. kit (Transparență + copie de siguranță)");
