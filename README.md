@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.3.6 · **Last updated:** 2026-10-23
+**Version:** 2.3.7 · **Last updated:** 2026-10-23
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,10 @@ MIT — see the `LICENSE` file. © 2026 Alexandru-Ionuț Chiuță (Alexio). Thir
 Audit: 2026-10-10 — verified with Playwright and axe-core (WCAG 2.1 AA, both themes); verified in code: no `fetch`, no `localStorage`. Fixed: the menu/layout for narrow screens (the CSS rules for ☰ were missing), colour contrast. The medical content was only reviewed, not clinically validated — for verification, ask for the opinion of an authorized specialist/instructor.
 
 ## History / Changelog
+
+### 2.3.7 — 2026-10-23
+
+Audit: emergency-card import now rejects files over 256 KB and non-object JSON (`null`, arrays) and resets the file field, so the same file can be re-imported. Medical content unchanged.
 
 ### 2.3.5 — 2026-10-22
 

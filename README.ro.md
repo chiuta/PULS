@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.3.6 · **Ultima actualizare:** 2026-10-23
+**Versiune:** 2.3.7 · **Ultima actualizare:** 2026-10-23
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -78,6 +78,10 @@ MIT — vezi fișierul `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Bi
 Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele teme); verificat în cod: fără `fetch`, fără `localStorage`. Corectate: meniul/layoutul pentru ecrane înguste (regulile CSS pentru ☰ lipseau), contrastul culorilor. Conținutul medical a fost doar parcurs, nu validat clinic — pentru verificare cere avizul unui specialist/instructor autorizat.
 
 ## Istoric / Changelog
+
+### 2.3.7 — 2026-10-23
+
+Audit: importul cardului de urgență respinge fișierele peste 256 KB și JSON-ul care nu e obiect (`null`, liste) și resetează câmpul de fișier, astfel încât același fișier poate fi reimportat. Conținutul medical este neschimbat.
 
 ### 2.3.5 — 2026-10-22
 
