@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.3.9 · **Last updated:** 2026-10-27
+**Version:** 2.4.0 · **Last updated:** 2026-10-27
 
 **Status:** experimental (medical content not validated by a specialist) · **Offline:** complete after the first load; maps/location need internet
 
@@ -87,7 +87,17 @@ Audit: 2026-10-10 — verified with Playwright and axe-core (WCAG 2.1 AA, both t
 - **Illustrations for positions:** the recovery-position diagram (§23) and the compression-rate gauge exist; **additional illustrations for other positions/manoeuvres: planned, not implemented** (they would need to be drawn and validated by a specialist). The positions are described in text in their sections; the text was not modified.
 - **External validation (physician, SMURD, Red Cross): not done.** This cannot be implemented in code; it remains a task for the author.
 
+## 2.4.0: executable offline check (2026-10-27)
+
+- The static offline check described in 2.3.9 is now a **repeatable test**: `tests/offline-static.test.mjs` (no browser) scans `index.html` and `sw.js` and fails if it finds `fetch`/`XMLHttpRequest`/`WebSocket`/`EventSource`/`sendBeacon`/`importScripts`/dynamic `import()` in the scripts, any external resource loaded automatically (`<script>`, `<link>`, `<img>`, `<iframe>`, `@import`, `url(http…)`), a CSP that is not `default-src 'none'` / `connect-src 'none'` / hash-only `script-src`, an external host outside the known list of links you open yourself, an absolute URL or cross-origin handling in `sw.js`, or a missing "not validated by a specialist / call 112" warning in any of the 8 languages (34 checks; a mutation test confirmed it catches an injected `fetch`, an external stylesheet and a relaxed CSP).
+- **It checks the code only**; it does not evaluate or change any medical content, and it is not a substitute for testing on real devices. Status stays **experimental**: **PULS is still not validated by physicians, SMURD or the Red Cross**.
+- **Still planned, not implemented:** additional illustrations for other positions/manoeuvres (they would have to be drawn and validated by a specialist — not created here); validation by a physician or authorized instructor.
+
 ## History / Changelog
+
+### 2.4.0 — 2026-10-27 (previous: 2.3.9)
+
+Executable static offline check (`tests/offline-static.test.mjs`). No change to the app's behaviour or medical content.
 
 ### 2.3.9 — 2026-10-27 (previous: 2.3.8)
 
