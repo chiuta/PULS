@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.3.9 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 2.4.0 · **Ultima actualizare:** 2026-10-27
 
 **Stare:** experimental (conținut medical nevalidat de un specialist) · **Offline:** complet după prima încărcare; hărțile/locația cer internet
 
@@ -87,7 +87,17 @@ Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele 
 - **Ilustrații pentru poziții:** există diagrama poziției de siguranță (§23) și cadranul ritmului de compresii; **ilustrații suplimentare pentru alte poziții/manevre: planificat, neimplementat** (ar trebui desenate și validate de un specialist). Pozițiile sunt descrise în text în secțiunile respective; textul nu a fost modificat.
 - **Validare externă (medic, SMURD, Crucea Roșie): neefectuată.** Nu putem implementa asta din cod; rămâne o sarcină a autorului.
 
+## 2.4.0: verificare offline executabilă (2026-10-27)
+
+- Verificarea statică offline descrisă în 2.3.9 este acum un **test repetabil**: `tests/offline-static.test.mjs` (fără browser) parcurge `index.html` și `sw.js` și eșuează dacă găsește `fetch`/`XMLHttpRequest`/`WebSocket`/`EventSource`/`sendBeacon`/`importScripts`/`import()` dinamic în scripturi, orice resursă externă încărcată automat (`<script>`, `<link>`, `<img>`, `<iframe>`, `@import`, `url(http…)`), un CSP care nu este `default-src 'none'` / `connect-src 'none'` / `script-src` doar cu hash-uri, o gazdă externă în afara listei cunoscute de linkuri pe care le deschizi singur, o adresă absolută sau tratarea altor origini în `sw.js`, sau lipsa avertismentului „nevalidat de un specialist / sună 112” în oricare din cele 8 limbi (34 de verificări; un test de mutație a confirmat că prinde un `fetch` injectat, o foaie de stil externă și un CSP slăbit).
+- **Verifică doar codul**; nu evaluează și nu schimbă conținut medical și nu înlocuiește testarea pe dispozitive reale. Starea rămâne **experimental**: **PULS tot nu este validat de medici, SMURD sau Crucea Roșie**.
+- **Rămân planificate, neimplementate:** ilustrații suplimentare pentru alte poziții/manevre (ar trebui desenate și validate de un specialist — nu s-au creat aici); validarea de către un medic sau instructor autorizat.
+
 ## Istoric / Changelog
+
+### 2.4.0 — 2026-10-27 (anterior: 2.3.9)
+
+Verificare statică offline executabilă (`tests/offline-static.test.mjs`). Fără schimbări de comportament sau de conținut medical.
 
 ### 2.3.9 — 2026-10-27 (anterior: 2.3.8)
 
