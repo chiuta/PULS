@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.3.8 · **Last updated:** 2026-10-26
+**Version:** 2.3.9 · **Last updated:** 2026-10-27
+
+**Status:** experimental (medical content not validated by a specialist) · **Offline:** complete after the first load; maps/location need internet
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -77,7 +79,19 @@ MIT — see the `LICENSE` file. © 2026 Alexandru-Ionuț Chiuță (Alexio). Thir
 
 Audit: 2026-10-10 — verified with Playwright and axe-core (WCAG 2.1 AA, both themes); verified in code: no `fetch`, no `localStorage`. Fixed: the menu/layout for narrow screens (the CSS rules for ☰ were missing), colour contrast. The medical content was only reviewed, not clinically validated — for verification, ask for the opinion of an authorized specialist/instructor.
 
+## Warning, offline check and what is missing (2026-10-27)
+
+- **Permanent in-app warning (2.3.9):** a visible bar on all sections and a line in Emergency Mode state that "content is not validated by a specialist (physician or authorized instructor) — educational information; in an emergency, call 112", with a `tel:112` link. The medical text was **not modified**. **PULS is not validated by physicians, SMURD or the Red Cross** and does not claim to be; validation by a physician or authorized instructor remains the priority and **has not been done**.
+- **Offline check (static, 2026-10-27):** `index.html` contains no `fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource`, `sendBeacon`, `importScripts`, `@import`, `url(http…)`, nor `<script>`/`<link>`/`<img>` pointing to external addresses; the CSP has `connect-src 'none'`. The only external addresses are links you open yourself (sources: crucearosie.ro, cpr.heart.org, erc.edu, who.int, smurd.ro, antisuicid.ro; Google Maps; `tel:`/`mailto:`) and licence comments of the QR library. **Conclusion:** the guide, the CPR metronome, the test and Emergency Mode work fully offline after the first load (service worker); only the map/hospital buttons and location sharing need the internet and the device's apps. Voice reading uses the browser's speech synthesis (some voices may be online, outside the app's control). This is a static check, not a test on devices.
+- **CPR metronome:** already existed (sound + vibration, 100–120/min), together with the rescuer-rotation timer.
+- **Illustrations for positions:** the recovery-position diagram (§23) and the compression-rate gauge exist; **additional illustrations for other positions/manoeuvres: planned, not implemented** (they would need to be drawn and validated by a specialist). The positions are described in text in their sections; the text was not modified.
+- **External validation (physician, SMURD, Red Cross): not done.** This cannot be implemented in code; it remains a task for the author.
+
 ## History / Changelog
+
+### 2.3.9 — 2026-10-27 (previous: 2.3.8)
+
+Permanent warning bar "content not validated by a specialist; call 112"; offline check documented. Medical content unchanged.
 
 ### 2.3.7 — 2026-10-23
 

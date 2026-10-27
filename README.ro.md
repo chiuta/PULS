@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.3.8 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.3.9 · **Ultima actualizare:** 2026-10-27
+
+**Stare:** experimental (conținut medical nevalidat de un specialist) · **Offline:** complet după prima încărcare; hărțile/locația cer internet
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -77,7 +79,19 @@ MIT — vezi fișierul `LICENSE`. © 2026 Alexandru-Ionuț Chiuță (Alexio). Bi
 
 Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele teme); verificat în cod: fără `fetch`, fără `localStorage`. Corectate: meniul/layoutul pentru ecrane înguste (regulile CSS pentru ☰ lipseau), contrastul culorilor. Conținutul medical a fost doar parcurs, nu validat clinic — pentru verificare cere avizul unui specialist/instructor autorizat.
 
+## Avertizare, verificare offline și ce lipsește (2026-10-27)
+
+- **Avertizare permanentă în aplicație (2.3.9):** o bară vizibilă pe toate secțiunile și o linie în Modul Urgență spun că „conținutul este nevalidat de un specialist (medic sau instructor autorizat) — informații educaționale; în urgență sună 112”, cu legătură `tel:112`. Textul medical **nu a fost modificat**. **PULS nu este validat de medici, SMURD sau Crucea Roșie** și nu pretinde acest lucru; validarea de către un medic sau formator autorizat rămâne prioritară și **nu este făcută**.
+- **Verificare offline (statică, 2026-10-27):** în `index.html` nu există `fetch`, `XMLHttpRequest`, `WebSocket`, `EventSource`, `sendBeacon`, `importScripts`, `@import`, `url(http…)`, nici `<script>`/`<link>`/`<img>` către adrese externe; CSP are `connect-src 'none'`. Singurele adrese externe sunt legături pe care le deschizi tu (surse: crucearosie.ro, cpr.heart.org, erc.edu, who.int, smurd.ro, antisuicid.ro; hărți Google; `tel:`/`mailto:`) și comentarii de licență ale bibliotecii QR. **Concluzie:** ghidul, metronomul RCP, testul și Modul Urgență funcționează complet offline după prima încărcare (service worker); doar butoanele de hartă/spital și trimiterea locației cer internet și aplicațiile dispozitivului. Citirea cu voce folosește sinteza vocală a browserului (unele voci pot fi online, în afara controlului aplicației). Verificare statică, nu un test pe dispozitive.
+- **Metronom RCP:** exista deja (sunet + vibrații, 100–120/min), alături de cronometrul de rotire a salvatorilor.
+- **Ilustrații pentru poziții:** există diagrama poziției de siguranță (§23) și cadranul ritmului de compresii; **ilustrații suplimentare pentru alte poziții/manevre: planificat, neimplementat** (ar trebui desenate și validate de un specialist). Pozițiile sunt descrise în text în secțiunile respective; textul nu a fost modificat.
+- **Validare externă (medic, SMURD, Crucea Roșie): neefectuată.** Nu putem implementa asta din cod; rămâne o sarcină a autorului.
+
 ## Istoric / Changelog
+
+### 2.3.9 — 2026-10-27 (anterior: 2.3.8)
+
+Bară permanentă de avertizare „conținut nevalidat de un specialist; sună 112”; verificare offline documentată. Conținutul medical neschimbat.
 
 ### 2.3.7 — 2026-10-23
 
