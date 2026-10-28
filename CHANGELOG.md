@@ -1,5 +1,25 @@
 # Jurnal de modificări — PULS
 
+## 2.5.1 — 2026-10-28 (anterior: 2.5.0)
+
+Runda a doua a revizuirii documentare făcute de Claude (AI), la cerere: verificarea celor 33 de afirmații „neverificate” și a elementului lipsă. **Nu este validare de specialist medical și nu o înlocuiește**; starea rămâne „experimental”. Tabelul actualizat, cu sursă, an și verdict pe rând: `docs/REVIZUIRE-MEDICALA.md`.
+
+Rezultat: din 33 de afirmații, 23 concordă (unele doar parțial sau față de surse non-ghid), 5 sunt ambigue (sursele diferă), 5 rămân neverificate, 0 diferă clar de un ghid. **Nicio cifră sau afirmație existentă nu a fost modificată.**
+
+Modificări de conținut (toate adăugiri, nu corecturi):
+
+- §4 Sufocare: notă nouă, „După compresii abdominale sau toracice făcute pentru sufocare, persoana trebuie examinată de un medic, chiar dacă își revine complet — pot apărea complicații sau leziuni interne.” Sursă: ERC Guidelines 2025 First Aid (Djärv et al., *Resuscitation* 215, 110752), citit pe oglindă (https://certifico.com/component/attachments/download/45824): „should be evaluated by a healthcare practitioner since complications and injuries may occur”. A doua sursă nu a fost obținută. RO+EN scrise de revizor; fr/it/es/pt/de/hu: traducere automată, **de revizuit**.
+- Autoinjector (§7): formularea „urmează instrucțiunile de pe dispozitiv” adăugată în fr/it/es/pt/de/hu (traducere automată, **de revizuit**), ca în ro/en din 2.5.0.
+- Intrare nouă în Istoric (8 limbi, tradusă automat).
+
+Surse folosite pentru verdicte (lista completă cu URL în `docs/REVIZUIRE-MEDICALA.md`, S30–S59). Ghiduri: AHA 2025 Adult BLS (https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support: puls maximum 10 s, gâfâieli = stop cardiac, schimbarea compresorului la ~2 min); Crucea Roșie Americană, carduri BLS 2025 (https://guidelines.redcross.org/wp-content/uploads/2025/12/BLS-ADULTS-AND-ADOLESCENTS.pdf, https://guidelines.redcross.org/wp-content/uploads/2025/12/BLS-PREGNANT-PATIENTS.pdf); AHA/Crucea Roșie Americană 2024 First Aid, text integral (https://cpr.heart.org/en/resuscitation-science/2024-first-aid-guidelines: poziția în șoc, înțepături, căpușe, hipoglicemie, a doua doză de adrenalină); RCUK Special Circumstances 2025 (https://www.resus.org.uk/print/pdf/node/36442: hipotermie până la 1 minut, gravidă); ICRC 2025 (https://blogs.icrc.org/app/uploads/sites/99/2026/05/First_Aid-EN.pdf: obiect înfipt); ESPGHAN/NASPGHAN (https://www.espghan.org/dam/jcr:c0ce1a8e-f92e-42a6-9b8a-19863e52aef7/Diagnosis: baterii nasture); Wilderness Medical Society 2024 (https://wms.imiscloud.com/magazine/1503/2024-Drowning-Summary/default.aspx); OMS, Psychological First Aid 2011; Comisia Europeană (https://digital-strategy.ec.europa.eu/en/policies/112, eCall). Surse non-ghid, marcate ca atare în document: MedlinePlus, Mayo Clinic, Crucea Roșie Canadiană și Finlandeză, St John Ambulance, Poison Control, CDC, Better Health Channel, directoare de linii de ajutor.
+
+Limite (detalii în document): instrumentul de citire rezumă și trunchiază paginile (ghidul AHA/Crucea Roșie 2024 a fost citit în două segmente); ERC 2025 a fost citit iar doar prin oglindă și rezumate RCUK, textul integral de pe erc.edu și ILCOR CoSTR nu au fost citite; pagina oficială antisuicid.ro și site-urile STS nu au fost citite.
+
+Nemodificat, de decis de un specialist: tehnica compresiilor toracice la sufocarea sugarului, ridicarea picioarelor în șoc, a doua doză de adrenalină (5 vs 5–15 min; AHA 2024: 5–10 min), hipoglicemie (10 min AHA 2024 / 15 min ERC 2025), „tabletă necoptă”, plus ambiguele (durata presiunii directe, ridicarea membrului, mâncare/băutură în șoc, poziția în anafilaxie, durata crizelor) și cele 5 rămase neverificate. Nu s-au creat ilustrații medicale.
+
+Teste (2026-10-28): `tests/offline-static.test.mjs` 34/34; `tests/fff-r8.test.mjs` 52/52 (verificarea „conținutul medical nu s-a schimbat” omisă intenționat; `axe-core` nu este instalat, deci verificările axe nu au rulat). Verificare manuală în Chromium: nota nouă, formularea autoinjectorului și intrarea din Istoric apar în toate cele 8 limbi. Kit: `fixcsp`, `info`, `check --lax`.
+
 ## 2.5.0 — 2026-10-28 (anterior: 2.4.0)
 
 Revizuire documentară făcută de Claude (AI), la cerere. **Nu este validare de specialist medical și nu o înlocuiește**; aplicația nu este „aprobată medical”, starea rămâne „experimental”. Raport complet: `docs/REVIZUIRE-MEDICALA.md` (tabel afirmație -> sursă -> verdict -> acțiune; limite și ce rămâne pentru specialist).

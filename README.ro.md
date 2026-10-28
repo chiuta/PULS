@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.5.0 · **Ultima actualizare:** 2026-10-28
+**Versiune:** 2.5.1 · **Ultima actualizare:** 2026-10-28
 
 **Stare:** experimental (conținut medical nevalidat de un specialist) · **Offline:** complet după prima încărcare; hărțile/locația cer internet
 
@@ -101,7 +101,18 @@ Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele 
 - O linie vizibilă pe pagina de start și o intrare în Istoric spun: „Conținut revizuit documentar de AI față de ghidurile ERC 2025, AHA 2025 și AHA/Crucea Roșie Americană 2024; nu e validat de specialist.” Avertizările existente nu s-au schimbat.
 - Teste: testul static offline 34/34, suita funcțională 52/52 (nu evaluează corectitudinea medicală; `axe-core` nu este instalat, deci verificările de accesibilitate cu axe nu au rulat).
 
+## 2.5.1: a doua revizuire documentară (2026-10-28)
+
+- **Tot nu este validare.** Cele 33 de afirmații marcate „neverificat” în 2.5.0 au fost verificate din nou față de ghiduri și surse publice (tabel cu URL, an, verdict: `docs/REVIZUIRE-MEDICALA.md`). Rezultat: 23 concordă (unele parțial sau față de surse non-ghid), 5 ambigue, 5 rămân neverificate, 0 diferă clar. Nicio cifră existentă nu a fost schimbată.
+- **Adăugat:** o notă la §4 Sufocare („după compresii abdominale sau toracice, persoana trebuie examinată de un medic”; ERC 2025) și formularea „urmează instrucțiunile de pe dispozitiv” la autoinjector în fr/it/es/pt/de/hu. Ambele în fr/it/es/pt/de/hu sunt **traduceri automate, de revizuit**.
+- Starea rămâne **experimental**; avertizările și linia „revizuit de AI, nevalidat” nu s-au schimbat. Limitele instrumentului de citire sunt descrise în document.
+- Teste: testul static offline 34/34, suita funcțională 52/52 (nu evaluează corectitudinea medicală; `axe-core` nu este instalat, deci verificările axe nu au rulat).
+
 ## Istoric / Changelog
+
+### 2.5.1 — 2026-10-28 (anterior: 2.5.0)
+
+A doua revizuire documentară (AI, nu specialist): 33 de afirmații verificate din nou (23 concordă, 5 ambigue, 5 neverificate, 0 diferă); adăugate nota „evaluare medicală după compresii” la §4 și formularea autoinjectorului în 6 limbi (traducere automată, de revizuit); `docs/REVIZUIRE-MEDICALA.md`.
 
 ### 2.5.0 — 2026-10-28 (anterior: 2.4.0)
 

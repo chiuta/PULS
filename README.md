@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.5.0 · **Last updated:** 2026-10-28
+**Version:** 2.5.1 · **Last updated:** 2026-10-28
 
 **Status:** experimental (medical content not validated by a specialist) · **Offline:** complete after the first load; maps/location need internet
 
@@ -101,7 +101,18 @@ Audit: 2026-10-10 — verified with Playwright and axe-core (WCAG 2.1 AA, both t
 - A visible line on the home page and an entry in History state: "Content documentarily reviewed by AI against ERC 2025, AHA 2025 and AHA/American Red Cross 2024; not validated by a specialist." Existing warnings are unchanged.
 - Tests: static offline test 34/34, functional suite 52/52 (they do not assess medical correctness; `axe-core` not installed, so axe accessibility checks did not run).
 
+## 2.5.1: second documentary review (2026-10-28)
+
+- **Still not a validation.** The 33 claims marked "unverified" in 2.5.0 were re-checked against guidelines and public sources (table with URL, year, verdict: `docs/REVIZUIRE-MEDICALA.md`). Result: 23 agree (some only partly or against non-guideline sources), 5 ambiguous, 5 remain unverified, 0 clearly differ. No existing figure was changed.
+- **Added:** a note in §4 Choking ("after abdominal or chest thrusts the person should be examined by a doctor"; ERC 2025) and the "follow the instructions on the device" wording for the auto-injector in fr/it/es/pt/de/hu. Both in fr/it/es/pt/de/hu are **machine translations, to be reviewed**.
+- Status stays **experimental**; the warnings and the "reviewed by AI, not validated" line are unchanged. The limits of the reading tool are described in the document.
+- Tests: static offline test 34/34, functional suite 52/52 (they do not assess medical correctness; `axe-core` is not installed, so axe checks did not run).
+
 ## History / Changelog
+
+### 2.5.1 — 2026-10-28 (previous: 2.5.0)
+
+Second documentary review (AI, not a specialist): 33 claims re-checked (23 agree, 5 ambiguous, 5 unverified, 0 differ); added the "medical evaluation after thrusts" note in §4 and the auto-injector wording in 6 languages (machine translation, to be reviewed); `docs/REVIZUIRE-MEDICALA.md`.
 
 ### 2.5.0 — 2026-10-28 (previous: 2.4.0)
 
