@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.4.0 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 2.5.0 · **Ultima actualizare:** 2026-10-28
 
 **Stare:** experimental (conținut medical nevalidat de un specialist) · **Offline:** complet după prima încărcare; hărțile/locația cer internet
 
@@ -93,7 +93,19 @@ Audit: 2026-10-10 — verificat cu Playwright și axe-core (WCAG 2.1 AA, ambele 
 - **Verifică doar codul**; nu evaluează și nu schimbă conținut medical și nu înlocuiește testarea pe dispozitive reale. Starea rămâne **experimental**: **PULS tot nu este validat de medici, SMURD sau Crucea Roșie**.
 - **Rămân planificate, neimplementate:** ilustrații suplimentare pentru alte poziții/manevre (ar trebui desenate și validate de un specialist — nu s-au creat aici); validarea de către un medic sau instructor autorizat.
 
+## 2.5.0: revizuire documentară a conținutului medical de către un AI (2026-10-28)
+
+- **Nu este validare.** `docs/REVIZUIRE-MEDICALA.md` compară afirmațiile medicale concrete ale aplicației cu ghiduri publice (ERC 2025, AHA 2025, AHA/AAP 2025, AHA/Crucea Roșie Americană 2024, OMS, WMS 2019, NHS Wales, British Red Cross, British Burn Association, prospecte de produs), tabel cu URL-ul sursei, anul și un verdict (concordă / diferă / de decis de specialist / neverificat). A fost făcută de Claude (AI), la cerere; **nu este validare de specialist și nu înlocuiește una**. PULS **nu** este „aprobat medical” și rămâne **experimental**.
+- **Corectate (3 discrepanțe clare, în toate cele 8 limbi):** spălarea rănii după mușcătura de animal 5 -> 15 minute (OMS); scoasă afirmația „tehnica cu două degete rămâne acceptată la sugari” (AHA/AAP 2025, RCUK 2025); menținerea autoinjectorului de adrenalină 3 s -> 3 s (EpiPen) sau 10 s (Jext) (prospecte). În fr/it/es/pt/de/hu s-au aplicat doar valorile/ștergerile; formularea „urmează instrucțiunile de pe dispozitiv” există doar în ro/en: **de revizuit**.
+- **Nemodificate:** tot ce e ambiguu sau cere judecată clinică (de ex. tehnica compresiilor toracice la sufocarea sugarului, ridicarea picioarelor în șoc, a doua doză de adrenalină la 5 vs 5–15 minute, „tabletă necoptă”) și 33 de afirmații neverificate, listate în document pentru un specialist.
+- O linie vizibilă pe pagina de start și o intrare în Istoric spun: „Conținut revizuit documentar de AI față de ghidurile ERC 2025, AHA 2025 și AHA/Crucea Roșie Americană 2024; nu e validat de specialist.” Avertizările existente nu s-au schimbat.
+- Teste: testul static offline 34/34, suita funcțională 52/52 (nu evaluează corectitudinea medicală; `axe-core` nu este instalat, deci verificările de accesibilitate cu axe nu au rulat).
+
 ## Istoric / Changelog
+
+### 2.5.0 — 2026-10-28 (anterior: 2.4.0)
+
+Revizuire documentară făcută de un AI (nu de specialist): 3 corecturi medicale (spălarea mușcăturii 15 min; tehnica cu două degete la sugari scoasă; menținere autoinjector 3 s EpiPen / 10 s Jext), linia „revizuit de AI, nevalidat”, `docs/REVIZUIRE-MEDICALA.md`.
 
 ### 2.4.0 — 2026-10-27 (anterior: 2.3.9)
 

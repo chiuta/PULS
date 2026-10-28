@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.4.0 · **Last updated:** 2026-10-27
+**Version:** 2.5.0 · **Last updated:** 2026-10-28
 
 **Status:** experimental (medical content not validated by a specialist) · **Offline:** complete after the first load; maps/location need internet
 
@@ -93,7 +93,19 @@ Audit: 2026-10-10 — verified with Playwright and axe-core (WCAG 2.1 AA, both t
 - **It checks the code only**; it does not evaluate or change any medical content, and it is not a substitute for testing on real devices. Status stays **experimental**: **PULS is still not validated by physicians, SMURD or the Red Cross**.
 - **Still planned, not implemented:** additional illustrations for other positions/manoeuvres (they would have to be drawn and validated by a specialist — not created here); validation by a physician or authorized instructor.
 
+## 2.5.0: documentary review of the medical content by an AI (2026-10-28)
+
+- **Not a validation.** `docs/REVIZUIRE-MEDICALA.md` compares the app's concrete medical claims with public guidelines (ERC 2025, AHA 2025, AHA/AAP 2025, AHA/American Red Cross 2024, WHO, WMS 2019, NHS Wales, British Red Cross, British Burn Association, product leaflets), table by table, with source URL, year and a verdict (agrees / differs / left for a specialist / unverified). It was done by Claude (an AI) on request; **it is not specialist validation and does not replace one**. PULS is **not** "medically approved" and stays **experimental**.
+- **Corrected (3 clear discrepancies, all 8 languages):** animal-bite wound washing 5 -> 15 minutes (WHO); removed "the two-finger technique remains accepted for infants" (AHA/AAP 2025, RCUK 2025); adrenaline auto-injector hold time 3 s -> 3 s (EpiPen) or 10 s (Jext) (product leaflets). In fr/it/es/pt/de/hu only the values/deletions were applied; the phrase "follow the instructions on the device" exists only in ro/en: **to review**.
+- **Not changed:** everything ambiguous or needing clinical judgement (e.g. infant choking chest-thrust technique, leg raising in shock, second adrenaline dose at 5 vs 5-15 minutes, "tabletă necoptă") and 33 unverified claims, listed in the document for a specialist.
+- A visible line on the home page and an entry in History state: "Content documentarily reviewed by AI against ERC 2025, AHA 2025 and AHA/American Red Cross 2024; not validated by a specialist." Existing warnings are unchanged.
+- Tests: static offline test 34/34, functional suite 52/52 (they do not assess medical correctness; `axe-core` not installed, so axe accessibility checks did not run).
+
 ## History / Changelog
+
+### 2.5.0 — 2026-10-28 (previous: 2.4.0)
+
+Documentary review by an AI (not a specialist): 3 medical corrections (animal-bite washing 15 min; infant two-finger technique removed; auto-injector hold 3 s EpiPen / 10 s Jext), "reviewed by AI, not validated" line, `docs/REVIZUIRE-MEDICALA.md`.
 
 ### 2.4.0 — 2026-10-27 (previous: 2.3.9)
 
