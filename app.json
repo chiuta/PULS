@@ -20,8 +20,8 @@
     "puls-haptic-v1",
     "puls-lang-v1"
   ],
-  "sizeBytes": 1351720,
-  "sha256": "7b56c1e4ffa41b31d8354361ec22e19b9b8384d9af6a8afa36470576289007cb",
+  "sizeBytes": 1351806,
+  "sha256": "067161756fff2973b88a8ff4883a0bce026b4d48c693e3b066a537389b9813d2",
   "csp": {
     "present": true,
     "directives": {
