@@ -26,7 +26,7 @@ ok(/^('sha256-[A-Za-z0-9+/=]+'\s*)+$/.test(dir("script-src")), "CSP script-src: 
 ok(dir("frame-src") === "'none'" && dir("object-src") === "'none'" && dir("base-uri") === "'none'" && dir("form-action") === "'none'", "CSP frame/object/base/form: 'none'");
 ok(!/unsafe-eval|https?:/.test(csp), "CSP fără unsafe-eval și fără surse http(s)", csp.slice(0, 200));
 // 4. linkuri externe = lista cunoscută, doar în <a href> (se deschid la clic)
-const ALLOW = ["www.who.int", "www.smurd.ro", "www.google.com", "www.erc.edu", "www.crucearosie.ro", "trom.tf", "maps.google.com", "cpr.heart.org", "chiuta.github.io", "buymeacoffee.com", "antisuicid.ro"];
+const ALLOW = ["www.who.int", "www.smurd.ro", "www.google.com", "www.erc.edu", "www.crucearosie.ro", "trom.tf", "undava.chiuta.ro", "puls.chiuta.ro", "maps.google.com", "cpr.heart.org", "chiuta.github.io", "buymeacoffee.com", "antisuicid.ro"];
 const aHosts = new Set([...h.matchAll(/<a\b[^>]*\bhref=["']https?:\/\/([^\/"'?#]+)/gi)].map(m => m[1]));
 const jsHosts = new Set(scripts.flatMap(s => [...s.matchAll(/https?:\/\/([^\/"'`?#\s)]+)/g)].map(m => m[1])).filter(x => x !== "www.w3.org"));   // www.w3.org = spațiu de nume SVG, nu o cerere
 for (const x of [...aHosts, ...jsHosts]) ok(ALLOW.includes(x), "gazdă externă din lista cunoscută: " + x);
