@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.5.1 · **Last updated:** 2026-10-28
+**Version:** 2.6.0 · **Last updated:** 2026-11-02
 
 **Status:** experimental (medical content not validated by a specialist) · **Offline:** complete after the first load; maps/location need internet
 

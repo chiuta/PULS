@@ -1,5 +1,9 @@
 # Jurnal de modificări — PULS
 
+## 2.6.0 — 2026-11-01
+
+Nou: «Trimite la…» (fff-kit, modulul FFF.bridge) — testul de cunoștințe poate fi trimis către Undava ca quiz (plic .fff.json, cu confirmare înainte de import). Fără rețea, fără telemetrie.
+
 ## 2.5.1 — 2026-10-28 (anterior: 2.5.0)
 
 Runda a doua a revizuirii documentare făcute de Claude (AI), la cerere: verificarea celor 33 de afirmații „neverificate” și a elementului lipsă. **Nu este validare de specialist medical și nu o înlocuiește**; starea rămâne „experimental”. Tabelul actualizat, cu sursă, an și verdict pe rând: `docs/REVIZUIRE-MEDICALA.md`.
