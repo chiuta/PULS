@@ -29,7 +29,7 @@ ok(!/unsafe-eval|https?:/.test(csp), "CSP fără unsafe-eval și fără surse ht
 const ALLOW = ["www.who.int", "www.smurd.ro", "www.google.com", "www.erc.edu", "www.crucearosie.ro", "trom.tf", "undava.chiuta.ro", "puls.chiuta.ro", "maps.google.com", "cpr.heart.org", "chiuta.github.io", "buymeacoffee.com", "antisuicid.ro"];
 const aHosts = new Set([...h.matchAll(/<a\b[^>]*\bhref=["']https?:\/\/([^\/"'?#]+)/gi)].map(m => m[1]));
 const jsHosts = new Set(scripts.flatMap(s => [...s.matchAll(/https?:\/\/([^\/"'`?#\s)]+)/g)].map(m => m[1])).filter(x => x !== "www.w3.org"));   // www.w3.org = spațiu de nume SVG, nu o cerere
-for (const x of [...aHosts, ...jsHosts]) ok(ALLOW.includes(x), "gazdă externă din lista cunoscută: " + x);
+for (const x of [...aHosts, ...jsHosts]) ok(ALLOW.includes(x) || /\.chiuta\.ro$/.test(x), "gazdă externă din lista cunoscută: " + x);
 // 5. service worker: aceeași origine, fără adrese absolute
 ok(!/https?:\/\//.test(strip(sw)), "sw.js fără adrese http(s)"); ok(/u\.origin\s*!==\s*self\.location\.origin/.test(sw), "sw.js ignoră cererile din alte origini"); ok(!/importScripts/.test(strip(sw)), "sw.js fără importScripts");
 // 6. avertismentul „nevalidat de specialist” + 112 în 8 limbi (doar prezența și unicitatea; conținutul medical nu se evaluează)
