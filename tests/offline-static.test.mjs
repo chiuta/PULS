@@ -33,7 +33,8 @@ for (const x of [...aHosts, ...jsHosts]) ok(ALLOW.includes(x) || /\.chiuta\.ro$/
 // 5. service worker: aceeași origine, fără adrese absolute
 ok(!/https?:\/\//.test(strip(sw)), "sw.js fără adrese http(s)"); ok(/u\.origin\s*!==\s*self\.location\.origin/.test(sw), "sw.js ignoră cererile din alte origini"); ok(!/importScripts/.test(strip(sw)), "sw.js fără importScripts");
 // 6. avertismentul „nevalidat de specialist” + 112 în 8 limbi (doar prezența și unicitatea; conținutul medical nu se evaluează)
-const start = h.indexOf("var D = "); let i = h.indexOf("{", start), depth = 0, inStr = false, esc = false, j = i;
+// „var D = {” = dicționarul aplicației (motorul de texturi are și el un „var D = ” în scriptul său)
+const start = h.indexOf("var D = {"); let i = h.indexOf("{", start), depth = 0, inStr = false, esc = false, j = i;
 for (; j < h.length; j++) { const c = h[j]; if (inStr) { if (esc) esc = false; else if (c === "\\") esc = true; else if (c === '"') inStr = false; } else if (c === '"') inStr = true; else if (c === "{") depth++; else if (c === "}" && --depth === 0) break; }
 const D = JSON.parse(h.slice(i, j + 1));
 const key = Object.keys(D.ro).find(k => /Conținut nevalidat de un specialist \(medic sau instructor autorizat\)/.test(D.ro[k]));
