@@ -2,8 +2,8 @@
   "schema": 1,
   "slug": "puls",
   "name": "PULS — Ghid complet de prim ajutor",
-  "version": "2.6.8",
-  "updated": "2026-11-13",
+  "version": "2.6.9",
+  "updated": "2026-11-15",
   "description": "Ghid complet, off-line, de prim ajutor: resuscitare (RCP), sufocare, sângerări, arsuri, șoc anafilactic, AVC și multe altele — un singur fișier, fără cont, fără internet.",
   "egress": [],
   "permissions": [
@@ -23,8 +23,8 @@
     "puls-haptic-v1",
     "puls-lang-v1"
   ],
-  "sizeBytes": 1674850,
-  "sha256": "9a09451772f47b6a701461ab536191fce7531d142e112b3813ff9107f0ee9dfd",
+  "sizeBytes": 1679770,
+  "sha256": "bf454f7df3b709d8fe68c97fc22e21e048632408cb232a28fa9c744dfc20ed79",
   "csp": {
     "present": true,
     "directives": {
