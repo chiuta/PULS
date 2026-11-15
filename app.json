@@ -15,6 +15,7 @@
     "serviceWorker",
     "localStorage",
     "Web Crypto",
+    "WebGL",
     "BroadcastChannel"
   ],
   "storageKeys": [
@@ -22,13 +23,13 @@
     "puls-haptic-v1",
     "puls-lang-v1"
   ],
-  "sizeBytes": 1622840,
-  "sha256": "beec432e22d6920c6d59425badff0859f3dceee568ca9466dd89f62fa82e324d",
+  "sizeBytes": 1674850,
+  "sha256": "9a09451772f47b6a701461ab536191fce7531d142e112b3813ff9107f0ee9dfd",
   "csp": {
     "present": true,
     "directives": {
       "default-src": "'none'",
-      "script-src": "sha256×9",
+      "script-src": "sha256×10",
       "style-src": "'unsafe-inline'",
       "img-src": "'self' data: blob:",
       "media-src": "data: blob:",
