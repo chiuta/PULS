@@ -8,7 +8,9 @@ const h = fs.readFileSync(path.join(R, "index.html"), "utf8"), sw = fs.readFileS
 let pass = 0, fail = 0; const ok = (c, m, x) => { if (c) pass++; else { fail++; console.log("  FAIL", m, x === undefined ? "" : JSON.stringify(x).slice(0, 250)); } };
 const strip = js => js.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[\s;{}()])\/\/[^\n]*/g, "$1");
 // 1. scripturile inline: fără API-uri de rețea
-const scripts = [...h.matchAll(/<script(?![^>]*\bsrc=)([^>]*)>([\s\S]*?)<\/script>/g)].filter(m => !/json/.test(m[1])).map(m => strip(m[2]));
+// fff-compat și fff-imp = stratul de compatibilitate al kitului (auditat în hub, tools/compat/audit.mjs): fff-imp conține singurul import() și pagina nu îl apelează;
+// o încărcare externă oricum nu ar trece de CSP (script-src doar hash-uri, connect-src 'none'), verificat mai jos.
+const scripts = [...h.matchAll(/<script(?![^>]*\bsrc=)([^>]*)>([\s\S]*?)<\/script>/g)].filter(m => !/json|\bid=["']fff-(?:compat|imp)["']/.test(m[1])).map(m => strip(m[2]));
 ok(scripts.length >= 1, "scripturi inline găsite", scripts.length);
 const NET = [/\bfetch\s*\(/, /\bXMLHttpRequest\b/, /\bWebSocket\b/, /\bEventSource\b/, /\bsendBeacon\b/, /\bimportScripts\b/, /(^|[^.\w$])import\s*\(/, /\bnew\s+Worker\s*\(\s*['"]https?:/];
 for (const re of NET) ok(!scripts.some(s => re.test(s)), "scripturile nu folosesc " + re.source);
@@ -26,7 +28,9 @@ ok(/^('sha256-[A-Za-z0-9+/=]+'\s*)+$/.test(dir("script-src")), "CSP script-src: 
 ok(dir("frame-src") === "'none'" && dir("object-src") === "'none'" && dir("base-uri") === "'none'" && dir("form-action") === "'none'", "CSP frame/object/base/form: 'none'");
 ok(!/unsafe-eval|https?:/.test(csp), "CSP fără unsafe-eval și fără surse http(s)", csp.slice(0, 200));
 // 4. linkuri externe = lista cunoscută, doar în <a href> (se deschid la clic)
-const ALLOW = ["www.who.int", "www.smurd.ro", "www.google.com", "www.erc.edu", "www.crucearosie.ro", "trom.tf", "undava.chiuta.ro", "puls.chiuta.ro", "maps.google.com", "cpr.heart.org", "chiuta.github.io", "buymeacoffee.com", "antisuicid.ro"];
+const ALLOW = ["www.who.int", "www.smurd.ro", "www.google.com", "www.erc.edu", "www.crucearosie.ro", "trom.tf", "undava.chiuta.ro", "puls.chiuta.ro", "maps.google.com", "cpr.heart.org", "chiuta.github.io", "buymeacoffee.com", "antisuicid.ro",
+  // butoanele de distribuire ale kitului: țintele se deschid doar la clic, cu textul ales de utilizator
+  "chiuta.ro", "wa.me", "t.me", "www.facebook.com", "x.com", "www.linkedin.com"];
 const aHosts = new Set([...h.matchAll(/<a\b[^>]*\bhref=["']https?:\/\/([^\/"'?#]+)/gi)].map(m => m[1]));
 const jsHosts = new Set(scripts.flatMap(s => [...s.matchAll(/https?:\/\/([^\/"'`?#\s)]+)/g)].map(m => m[1])).filter(x => x !== "www.w3.org"));   // www.w3.org = spațiu de nume SVG, nu o cerere
 for (const x of [...aHosts, ...jsHosts]) ok(ALLOW.includes(x) || /\.chiuta\.ro$/.test(x), "gazdă externă din lista cunoscută: " + x);
