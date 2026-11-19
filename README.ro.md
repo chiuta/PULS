@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.7.2 · **Ultima actualizare:** 2026-11-17
+**Versiune:** 2.7.3 · **Ultima actualizare:** 2026-11-20
 
 **Stare:** experimental (conținut medical nevalidat de un specialist) · **Offline:** complet după prima încărcare; hărțile/locația cer internet
 
